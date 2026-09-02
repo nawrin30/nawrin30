@@ -120,12 +120,16 @@ Focus: E-Commerce • AI Integration • Modern UI • Smart User Experience
 <img src="https://streak-stats.demolab.com?user=nawrin30&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
 
 </div>
-
 ## 📈 GitHub Contributions
 
 <div align="center">
 
-[![Nawrin's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=nawrin30&theme=github-dark&hide_border=true&area=true)](https://github.com/nawrin30)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg">
+
+  <img alt="GitHub Contribution Graph" src="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg">
+</picture>
 
 </div>
 
