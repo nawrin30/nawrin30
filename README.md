@@ -107,9 +107,9 @@ Focus: E-Commerce • AI Integration • Modern UI • Smart User Experience
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=nawrin30&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api?username=nawrin30&show_icons=true&hide_border=true&count_private=true&theme=tokyonight" width="48%" />
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nawrin30&layout=compact&theme=tokyonight&hide_border=true" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nawrin30&layout=compact&hide_border=true&theme=tokyonight" width="40%" />
 
 </div>
 
