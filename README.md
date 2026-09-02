@@ -121,6 +121,14 @@ Focus: E-Commerce • AI Integration • Modern UI • Smart User Experience
 
 </div>
 
+## 📈 GitHub Contributions
+
+<div align="center">
+
+[![Nawrin's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=nawrin30&theme=github-dark&hide_border=true&area=true)](https://github.com/nawrin30)
+
+</div>
+
 🎯 Goals
 
 🚀 Build and deploy more real-world full-stack applications
