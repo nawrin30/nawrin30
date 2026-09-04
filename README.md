@@ -142,10 +142,21 @@ Focus: E-Commerce • AI Integration • Modern UI • Smart User Experience
   <img src="https://github-profile-trophy.vercel.app/?username=nawrin30&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8" alt="Nawrin's GitHub Trophies"/>
 </p>
 
-🐍 Contribution Snake
+
+
+## 🐍 Contribution Snake
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)"
+            srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake-dark.svg">
+
+    <source media="(prefers-color-scheme: light)"
+            srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg">
+
+    <img alt="GitHub Contribution Snake"
+         src="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg">
+  </picture>
 </p>
 
 🎯 Goals
