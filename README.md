@@ -152,6 +152,8 @@ Focus: E-Commerce • AI Integration • Modern UI • Smart User Experience
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg">
   <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg">
 </picture>
+
+
 🎯 Goals
 
 🚀 Build and deploy more real-world full-stack applications
