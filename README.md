@@ -127,12 +127,12 @@ Focus: E-Commerce • AI Integration • Modern UI • Smart User Experience
   <img src="https://github-readme-stats.vercel.app/api?username=nawrin30&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true" alt="Nawrin's GitHub Contributions"/>
 </p>
 
-📈 GitHub Activity
+
 
 ## 📈 GitHub Activity
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nawrin30&theme=tokyo-night&hide_border=true&area=true" alt="Nawrin's GitHub Activity Graph">
+  <img src="./activity.svg" alt="Nawrin's GitHub Activity Graph">
 </p>
 
 
