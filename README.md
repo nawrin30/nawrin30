@@ -46,25 +46,25 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 💻 Languages
 
 <p>
-  <img src="https://skillicons.dev/icons?i=java,cpp,js,ts" alt="Java C++ JavaScript TypeScript"/>
+  <img src="https://skillicons.dev/icons?i=java,cpp,js,ts,python,c" alt="Java C++ JavaScript TypeScript Python C"/>
 </p>
 
 🌐 Frontend
 
 <p>
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react" alt="HTML CSS JavaScript TypeScript React"/>
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,tailwind" alt="HTML CSS JavaScript TypeScript React Tailwind"/>
 </p>
 
 ⚙️ Backend
 
 <p>
-  <img src="https://skillicons.dev/icons?i=nodejs,express" alt="Node.js Express.js"/>
+  <img src="https://skillicons.dev/icons?i=nodejs,express,mysql,postgres,prisma" alt="Node.js Express.js MySql Postgres Prisma"/>
 </p>
 
 🔧 Tools
 
 <p>
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,idea" alt="Git GitHub VS Code IntelliJ IDEA"/>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,idea,ubuntu" alt="Git GitHub VS Code IntelliJ IDEA Ubuntu"/>
 </p>
 
 🚀 Featured Projects
@@ -120,19 +120,30 @@ Focus: E-Commerce • AI Integration • Modern UI • Smart User Experience
 <img src="https://streak-stats.demolab.com?user=nawrin30&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
 
 </div>
-## 📊 GitHub Statistics & Analysis
 
-<div align="center">
+📅 GitHub Contributions
 
-<img src="./assets/github-contribution-graph.svg" width="100%" />
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=nawrin30&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true" alt="Nawrin's GitHub Contributions"/>
+</p>
 
-<br><br>
+📈 GitHub Activity
 
-<img src="https://github-readme-stats.vercel.app/api?username=nawrin30&show_icons=true&hide_border=true&theme=github_dark" height="180"/>
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nawrin30&theme=tokyo-night&hide_border=true&area=true" alt="Nawrin's GitHub Activity Graph"/>
+</p>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nawrin30&layout=compact&hide_border=true&theme=github_dark" height="180"/>
+🏆 GitHub Trophies
 
-</div>
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=nawrin30&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8" alt="Nawrin's GitHub Trophies"/>
+</p>
+
+🐍 Contribution Snake
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake"/>
+</p>
 
 🎯 Goals
 
