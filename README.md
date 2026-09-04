@@ -144,10 +144,21 @@ Focus: E-Commerce • AI Integration • Modern UI • Smart User Experience
 
 
 
-
 ## 🐍 Contribution Snake
 
-![GitHub Contribution Snake](https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)"
+            srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake-dark.svg">
+
+    <source media="(prefers-color-scheme: light)"
+            srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg">
+
+    <img src="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg"
+         alt="GitHub Contribution Snake">
+  </picture>
+</p>
+
 
 🎯 Goals
 
