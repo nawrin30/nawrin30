@@ -132,7 +132,7 @@ Bazar Dor is a web application that helps users explore daily essentials, browse
 
 Focus: E-Commerce • Price Comparison • Product Categories • API Integration
 
-*Tech Stack:*
+
 
 *Tech Stack:*
 
