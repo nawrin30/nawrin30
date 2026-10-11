@@ -251,7 +251,7 @@ I'm always interested in software development, web technologies, collaboration, 
 
 <br><br>
 
-[View Profile Counter](https://komarev.com/ghpvc/?username=nawrin30)
+![Profile Views](https://komarev.com/ghpvc/?username=nawrin30&label=PROFILE+VIEWS&color=blue&style=for-the-badge)
 
 <img src="https://komarev.com/ghpvc/?username=nawrin30&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views"/>
 
