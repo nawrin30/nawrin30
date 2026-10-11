@@ -1,258 +1,282 @@
-<div align="center">
+# 🌙 Quran Al-Kareem — القرآن الكريم
+
+### Read the Quran. Understand Its Meaning. Follow Its Guidance.
+
+A beautiful, responsive, and user-friendly Quran reading website built with **HTML5, CSS3, and Vanilla JavaScript**. Quran Al-Kareem provides a peaceful digital environment for reading the Holy Quran, understanding its meaning through translations, listening to recitations, saving favorite verses, and keeping track of daily Tasbih.
+
+---
+
+
+## ✨ Features
+
+### 📖 Quran Reading
+- Read the Holy Quran in its original Arabic text.
+- Browse all 114 Surahs in the correct Quranic order.
+- View Surah names, verse counts, and available Surah information.
+- Navigate between previous and next Surahs.
+- Jump to a specific verse.
+- Search for Surahs using their names.
+
+### 🌐 Multilingual Support
+- **বাংলা (Bangla)** — Read Quran translations in Bengali.
+- **English** — Read Quran translations in English.
+- **العربية (Arabic)** — Arabic interface support where available.
+- Switch between available interface and translation languages.
+- Preserve the original Arabic Quranic text.
+
+### 🔤 Translation Controls
+- Show or hide translations using the top navigation toolbar.
+- Read translations directly beneath Arabic verses.
+- Keep the Arabic text visible when translations are hidden.
+- Save translation visibility preferences.
+
+### 🔊 Quran Audio
+- Play Quran recitations when valid audio is available.
+- Use audio playback controls.
+- Display helpful messages when audio cannot be loaded.
+- No automatic audio playback.
+
+### 🔖 Bookmarks
+- Save favorite Quranic verses.
+- Remove saved bookmarks.
+- View bookmarked verses.
+- Return to a bookmarked verse.
+- Keep bookmarks saved after refreshing the page.
+
+### 📿 Digital Tasbih
+- Count daily Dhikr with a digital counter.
+- Read Arabic Dhikr and Bangla pronunciation.
+- Choose from common Dhikr, including:
+  - SubhanAllah
+  - Alhamdulillah
+  - Allahu Akbar
+  - Astaghfirullah
+- Undo the previous count.
+- Reset the counter with confirmation.
+- Preserve the counter using LocalStorage.
 
-Hi, I'm Nawrin Tarannum 👋
+### 🎨 Theme Customization
+- Switch between dark and light themes.
+- Enjoy a dark reading interface with gold and emerald accents.
+- Use a light theme with cream, ivory, and green colors.
+- Save theme preferences between visits.
 
-Software Engineering Student | Aspiring Full-Stack Developer
+### 📱 Responsive Design
+- Optimized for desktops, laptops, tablets, and smartphones.
+- Responsive Surah sidebar and navigation.
+- Readable Arabic typography on small screens.
+- Accessible controls and clear focus indicators.
 
-Passionate about building modern, practical, and user-focused software solutions.
+---
 
-<p>
-  <a href="https://github.com/nawrin30">
-    <img src="https://img.shields.io/badge/GitHub-nawrin30-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
-  </a>
-  <a href="https://www.linkedin.com/in/nawrin-tarannum">
-    <img src="https://img.shields.io/badge/LinkedIn-Nawrin%20Tarannum-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="mailto:nawrintarannum30@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
-  </a>
-</p>
+## 🛠️ Technologies Used
 
-</div>
+| Technology | Purpose |
+|---|---|
+| HTML5 | Website structure and semantic markup |
+| CSS3 | Styling, layouts, themes, and responsiveness |
+| Vanilla JavaScript (ES6+) | Interactivity and application logic |
+| AlQuran Cloud API | Quran text, Surah data, and translations |
+| Fetch API | Retrieving Quran data |
+| LocalStorage | Saving settings, bookmarks, and reading preferences |
+| Google Fonts | Arabic and Bangla typography, when available |
 
+---
+## Netlify Link: https://quran-al-kareem-1.netlify.app
+## Github Repository Link: https://github.com/nawrin30/Quran-Al-Kareem
 
-👩‍💻 About Me
 
-I’m a Software Engineering student at Daffodil International University with a strong interest in software development and full-stack web development. I enjoy turning ideas into practical applications and continuously improving my skills through hands-on projects.
 
-My current tech stack includes Java, C++, JavaScript, TypeScript, React, Node.js, and Express.js. I’m interested in building clean, responsive, and user-friendly applications while developing a strong foundation in Data Structures, Algorithms, Object-Oriented Programming, and Software Engineering principles.
+## 📂 Project Structure
 
-I’m currently working on projects such as TaskFlow, Real-Time Communication App, and EcoMart AI. My goal is to grow as a Full-Stack Software Developer and contribute to meaningful, real-world software solutions.
+```text
+quran-al-kareem/
+│
+├── index.html
+├── README.md
+│
+├── css/
+│   ├── style.css
+│   ├── themes.css
+│   └── responsive.css
+│
+├── js/
+│   ├── config.js
+│   ├── language.js
+│   ├── quran.js
+│   ├── app.js
+│   ├── bookmarks.js
+│   ├── audio.js
+│   ├── tasbih.js
+│   └── settings.js
+│
+└── assets/
+    ├── images/
+    └── icons/
+```
 
-🎓 Studying Software Engineering
+---
 
-💻 Interested in Full-Stack Web Development
+## 🚀 Getting Started
 
-🌱 Currently improving my skills in React, TypeScript & Express.js
+Follow these steps to run the project locally.
 
-🧠 Enjoy programming, problem solving, and building real-world applications
+### Prerequisites
 
-🚀 Focused on writing clean, maintainable, and user-friendly code
+- A modern web browser, such as Google Chrome, Microsoft Edge, or Firefox.
+- [Visual Studio Code](https://code.visualstudio.com/).
+- The Live Server extension for VS Code.
+- An active internet connection for loading Quran data and other online resources.
 
-🤝 Open to collaboration, learning, and new opportunities
+### Installation
 
-🛠️ Tech Stack
+**Step 1: Download or clone the project**
 
-💻 Languages
+Download the project ZIP and extract it, or clone the repository if it is hosted on GitHub.
 
-<p>
-  <img src="https://skillicons.dev/icons?i=java,cpp,js,ts,python,c" alt="Java C++ JavaScript TypeScript Python C"/>
-</p>
+```bash
+git clone 
+```
 
-🌐 Frontend
+Replace `https://github.com/nawrin30/Quran-Al-Kareem` with your actual repository URL.
 
-<p>
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,tailwind" alt="HTML CSS JavaScript TypeScript React Tailwind"/>
-</p>
+**Step 2: Open the project**
 
-⚙️ Backend
+Open the extracted `quran-al-kareem` folder in Visual Studio Code.
 
-<p>
-  <img src="https://skillicons.dev/icons?i=nodejs,express,mysql,postgres,prisma" alt="Node.js Express.js MySql Postgres Prisma"/>
-</p>
+**Step 3: Install Live Server**
 
-🔧 Tools
+Open the Extensions panel in VS Code, search for **Live Server**, and install it.
 
-<p>
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,idea,ubuntu" alt="Git GitHub VS Code IntelliJ IDEA Ubuntu"/>
-</p>
+**Step 4: Run the website**
 
-🚀 Featured Projects
+Open `index.html`, right-click inside the editor, and select **Open with Live Server**.
 
-📋 TaskFlow — Smart Task & Project Management System
+The website will open in your default browser.
 
-A modern project and task management platform designed to help users organize projects, manage tasks, track progress, and improve productivity.
+> You can also use another local web server if you prefer. Some browser features and network requests may not work correctly when opening the HTML file directly using `file://`.
 
-Focus: Project Management • Task Tracking • Productivity • Team Collaboration
+---
 
-*Tech Stack:*
+## 📡 Quran Data API
 
-![TaskFlow Tech Stack](https://skillicons.dev/icons?i=html,css,js&perline=7&size=60)
+This project uses the AlQuran Cloud API to retrieve Quranic data.
 
-🌦️ SkyCast — Weather Forecasting App
+**API base URL:**
 
-A modern weather forecasting web application providing weather updates, temperature details, and essential weather information through a clean and responsive interface.
+`https://api.alquran.cloud/v1`
 
+The application may use API endpoints for:
 
-Focus: Weather Forecasting • API Integration • Responsive Design • Web Development
+- Retrieving the list of Surahs.
+- Loading Arabic Quranic text.
+- Loading available Bangla and English translations.
+- Retrieving available recitation data.
 
-*Tech Stack:*
+API availability and supported editions may change. Translation identifiers should be checked against the API's current supported editions.
 
-![Tech Stack](https://skillicons.dev/icons?i=html,css,js)
+**Important:** Quranic text and translations should be retrieved from reliable sources. The application should never silently replace a missing Bangla translation with English text or use machine-generated translations as a substitute for verified Quran translations.
 
-🤖 SkillForge AI — AI-Powered Learning Platform
+---
 
-An AI-powered learning platform designed to personalize learning experiences, develop new skills, and help learners achieve their educational goals through intelligent tools.
+## 💾 Data Storage
 
-Focus: Artificial Intelligence • EdTech • Personalized Learning • Web Development
+LocalStorage may be used to preserve user preferences and local application data, including:
 
-*Tech Stack:*
+- Selected theme.
+- Interface language.
+- Translation language and visibility.
+- Bookmarked verses.
+- Last reading position.
+- Digital Tasbih counter.
 
+These settings are stored in the user's browser and may not automatically transfer to another browser or device. Clearing browser data can remove locally saved information.
 
-![Tech Stack](https://skillicons.dev/icons?i=html,css,js,react,tailwind)
+---
 
+## 🔐 Privacy
 
-🧘 Mindful Breathing Hub
+Quran Al-Kareem is designed as a browser-based reading experience. Local preferences can be stored in the browser using LocalStorage.
 
-A calming wellness web application featuring guided breathing exercises, meditation sessions, and ambient sounds to support relaxation, focus, and mindfulness.
+Online Quran data, fonts, or audio may be requested from external services. Their availability and privacy practices are governed by the respective providers. Avoid storing sensitive personal information in browser storage.
 
-Focus: Mindfulness • Meditation • Breathing Exercises • User Experience
+---
 
-*Tech Stack:*
+## 🧪 Testing Checklist
 
-![Tech Stack](https://skillicons.dev/icons?i=html,css,js,nodejs)
+Before publishing the project, verify the following:
 
+- [ ] All 114 Surahs can be selected.
+- [ ] Arabic Quranic verses load correctly.
+- [ ] Bangla mode displays genuine Bangla translations.
+- [ ] English mode displays the selected English translation.
+- [ ] The top translation button shows and hides translations.
+- [ ] Translation preferences persist after refreshing.
+- [ ] Dark and light themes work correctly.
+- [ ] Bookmarks can be saved, removed, and reopened.
+- [ ] Audio controls handle unavailable audio gracefully.
+- [ ] Search and verse navigation work correctly.
+- [ ] Tasbih counting, undo, and reset work as expected.
+- [ ] The website works on desktop and mobile screens.
+- [ ] All referenced local files exist.
+- [ ] Network errors display helpful messages.
 
-📖 Quran Al-Kareem — Islamic Companion Website
+---
 
-An Islamic web application designed to help users read the Holy Quran, explore Surahs, learn Duas and Dhikr, and access essential Islamic resources in one place.
+## 🐛 Troubleshooting
 
-Focus: Islamic Learning • Quran • Daily Dhikr • Responsive Web Design
+**Quran data is not loading**
 
+- Check your internet connection.
+- Confirm that the API service is available.
+- Refresh the page and try again.
+- Check the browser console for errors.
 
-*Tech Stack:*
+**Bangla translation is missing**
 
+- Verify that the selected translation edition is supported by the API.
+- Check whether the translation request succeeded.
+- Do not substitute English text under a Bangla translation label.
 
-![Tech Stack](https://skillicons.dev/icons?i=html,css,js)
+**Audio is not playing**
 
+- Check your internet connection.
+- Verify that the selected recitation has a valid audio URL.
+- Check your browser's audio permissions and volume settings.
 
-🛒 Bazar Dor — Daily Essentials Price Comparison Platform
+**Changes are not being saved**
 
-Bazar Dor is a web application that helps users explore daily essentials, browse product categories, and compare prices for smarter shopping.
+- Confirm that browser storage is enabled.
+- Avoid clearing site data if you want to preserve bookmarks and settings.
+- Remember that LocalStorage is specific to the browser and origin.
 
-Focus: E-Commerce • Price Comparison • Product Categories • API Integration
+---
 
+## 🤝 Contributing
 
+Contributions, bug reports, and suggestions are welcome.
 
-*Tech Stack:*
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your changes and test them.
+4. Commit your work with a clear message.
+5. Submit a pull request describing your improvements.
 
-![Tech Stack](https://skillicons.dev/icons?i=nextjs,react,js,tailwind,git,github)
+Please take special care when modifying Quranic text, translations, Arabic pronunciation, or religious content. Verify such changes using reliable sources.
 
+---
 
+## 📜 License
 
-📚 Currently Learning
+No specific license is declared here. Add a `LICENSE` file before distributing the project publicly, and ensure that any external fonts, images, audio, and translation data are used according to their respective licenses and terms.
 
-⚛️ React & modern frontend development
+---
 
-🟦 TypeScript
+## 🌟 Project Goal
 
-🟢 Node.js & Express.js
+The goal of **Quran Al-Kareem** is to provide a peaceful, accessible, and convenient digital space where people can read the Holy Quran, understand its meaning, listen to available recitations, save meaningful verses, and maintain their daily Dhikr.
 
-🏗️ Full-Stack Web Development
+May this project encourage reflection, understanding, and a closer connection with the Holy Quran.
 
-🧩 Data Structures & Algorithms
+**القرآن الكريم — Read. Reflect. Remember.**
 
-💡 Software Engineering best practices
-
-🚀 Building and deploying real-world applications
-
-📊 GitHub Statistics
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=nawrin30&show_icons=true&hide_border=true&count_private=true&theme=tokyonight" width="48%" />
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nawrin30&layout=compact&hide_border=true&theme=tokyonight" width="40%" />
-
-</div>
-
-🔥 GitHub Streak
-
-<div align="center">
-
-<img src="https://streak-stats.demolab.com?user=nawrin30&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
-
-</div>
-
-📅 GitHub Contributions
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=nawrin30&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true" alt="Nawrin's GitHub Contributions"/>
-</p>
-
-
-
-## 📈 GitHub Activity
-
-<p align="center">
-  <img src="./activity.svg" alt="Nawrin's GitHub Activity Graph">
-</p>
-
-
-🏆 GitHub Trophies
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=nawrin30&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8" alt="Nawrin's GitHub Trophies"/>
-</p>
-
-
-
-## 🐍 Contribution Snake
-
-<h2 align="center">🐍 Contribution Snake</h2>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg" />
-    <img alt="GitHub Contribution Snake Animation"
-      src="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake-dark.svg" />
-  </picture>
-</p>
-
-
-🎯 Goals
-
-🚀 Build and deploy more real-world full-stack applications
-
-⚛️ Become highly confident with React & TypeScript
-
-🔧 Strengthen backend development with Express.js
-
-🧩 Improve Data Structures & Algorithms
-
-🌐 Learn modern software architecture and best practices
-
-🤝 Contribute to open-source projects
-
-💼 Prepare for a successful career in software development
-
-💡 Developer Mindset
-
-"Build. Learn. Improve. Repeat."
-
-I believe consistent learning, practical projects, and clean code are the foundation of becoming a better software engineer.
-
-🤝 Let's Connect
-
-I'm always interested in software development, web technologies, collaboration, and learning new things.
-
-<div align="center">
-
-<a href="https://www.linkedin.com/in/nawrin-tarannum">
-  <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-&nbsp;
-<a href="mailto:nawrintarannum30@gmail.com">
-  <img src="https://img.shields.io/badge/Gmail-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
-</a>
-
-<br><br>
-
-<img src="https://komarev.com/ghpvc/?username=nawrin30&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views"/>
-
-⭐ Thanks for visiting my profile!
-
-</div>
