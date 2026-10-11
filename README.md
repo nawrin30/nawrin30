@@ -20,7 +20,7 @@ Passionate about building modern, practical, and user-focused software solutions
 
 </div>
 
-👩‍💻 About Me
+
 👩‍💻 About Me
 
 I’m a Software Engineering student at Daffodil International University with a strong interest in software development and full-stack web development. I enjoy turning ideas into practical applications and continuously improving my skills through hands-on projects.
