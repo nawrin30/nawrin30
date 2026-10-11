@@ -81,6 +81,8 @@ A modern weather forecasting web application providing weather updates, temperat
 
 
 Focus: Weather Forecasting • API Integration • Responsive Design • Web Development
+
+
 ![Tech Stack](https://skillicons.dev/icons?i=html,css,js)
 
 🤖 SkillForge AI — AI-Powered Learning Platform
