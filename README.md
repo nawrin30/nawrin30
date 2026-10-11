@@ -1,0 +1,259 @@
+<div align="center">
+
+Hi, I'm Nawrin Tarannum 👋
+
+Software Engineering Student | Aspiring Full-Stack Developer
+
+Passionate about building modern, practical, and user-focused software solutions.
+
+<p>
+  <a href="https://github.com/nawrin30">
+    <img src="https://img.shields.io/badge/GitHub-nawrin30-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  <a href="https://www.linkedin.com/in/nawrin-tarannum">
+    <img src="https://img.shields.io/badge/LinkedIn-Nawrin%20Tarannum-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="mailto:nawrintarannum30@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+</p>
+
+</div>
+
+
+👩‍💻 About Me
+
+I’m a Software Engineering student at Daffodil International University with a strong interest in software development and full-stack web development. I enjoy turning ideas into practical applications and continuously improving my skills through hands-on projects.
+
+My current tech stack includes Java, C++, JavaScript, TypeScript, React, Node.js, and Express.js. I’m interested in building clean, responsive, and user-friendly applications while developing a strong foundation in Data Structures, Algorithms, Object-Oriented Programming, and Software Engineering principles.
+
+I’m currently working on projects such as TaskFlow, Real-Time Communication App, and EcoMart AI. My goal is to grow as a Full-Stack Software Developer and contribute to meaningful, real-world software solutions.
+
+🎓 Studying Software Engineering
+
+💻 Interested in Full-Stack Web Development
+
+🌱 Currently improving my skills in React, TypeScript & Express.js
+
+🧠 Enjoy programming, problem solving, and building real-world applications
+
+🚀 Focused on writing clean, maintainable, and user-friendly code
+
+🤝 Open to collaboration, learning, and new opportunities
+
+🛠️ Tech Stack
+
+💻 Languages
+
+<p>
+  <img src="https://skillicons.dev/icons?i=java,cpp,js,ts,python,c" alt="Java C++ JavaScript TypeScript Python C"/>
+</p>
+
+🌐 Frontend
+
+<p>
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,tailwind" alt="HTML CSS JavaScript TypeScript React Tailwind"/>
+</p>
+
+⚙️ Backend
+
+<p>
+  <img src="https://skillicons.dev/icons?i=nodejs,express,mysql,postgres,prisma" alt="Node.js Express.js MySql Postgres Prisma"/>
+</p>
+
+🔧 Tools
+
+<p>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,idea,ubuntu" alt="Git GitHub VS Code IntelliJ IDEA Ubuntu"/>
+</p>
+
+🚀 Featured Projects
+
+📋 TaskFlow — Smart Task & Project Management System
+
+A modern project and task management platform designed to help users organize projects, manage tasks, track progress, and improve productivity.
+
+Focus: Project Management • Task Tracking • Productivity • Team Collaboration
+
+*Tech Stack:*
+
+![TaskFlow Tech Stack](https://skillicons.dev/icons?i=html,css,js&perline=7&size=60)
+
+🌦️ SkyCast — Weather Forecasting App
+
+A modern weather forecasting web application providing weather updates, temperature details, and essential weather information through a clean and responsive interface.
+
+
+Focus: Weather Forecasting • API Integration • Responsive Design • Web Development
+
+*Tech Stack:*
+
+![Tech Stack](https://skillicons.dev/icons?i=html,css,js)
+
+🤖 SkillForge AI — AI-Powered Learning Platform
+
+An AI-powered learning platform designed to personalize learning experiences, develop new skills, and help learners achieve their educational goals through intelligent tools.
+
+Focus: Artificial Intelligence • EdTech • Personalized Learning • Web Development
+
+*Tech Stack:*
+
+
+![Tech Stack](https://skillicons.dev/icons?i=html,css,js,react,tailwind)
+
+
+🧘 Mindful Breathing Hub
+
+A calming wellness web application featuring guided breathing exercises, meditation sessions, and ambient sounds to support relaxation, focus, and mindfulness.
+
+Focus: Mindfulness • Meditation • Breathing Exercises • User Experience
+
+*Tech Stack:*
+
+![Tech Stack](https://skillicons.dev/icons?i=html,css,js,nodejs)
+
+
+📖 Quran Al-Kareem — Islamic Companion Website
+
+An Islamic web application designed to help users read the Holy Quran, explore Surahs, learn Duas and Dhikr, and access essential Islamic resources in one place.
+
+Focus: Islamic Learning • Quran • Daily Dhikr • Responsive Web Design
+
+
+*Tech Stack:*
+
+
+![Tech Stack](https://skillicons.dev/icons?i=html,css,js)
+
+
+🛒 Bazar Dor — Daily Essentials Price Comparison Platform
+
+Bazar Dor is a web application that helps users explore daily essentials, browse product categories, and compare prices for smarter shopping.
+
+Focus: E-Commerce • Price Comparison • Product Categories • API Integration
+
+
+
+*Tech Stack:*
+
+![Tech Stack](https://skillicons.dev/icons?i=nextjs,react,js,tailwind,git,github)
+
+
+
+📚 Currently Learning
+
+⚛️ React & modern frontend development
+
+🟦 TypeScript
+
+🟢 Node.js & Express.js
+
+🏗️ Full-Stack Web Development
+
+🧩 Data Structures & Algorithms
+
+💡 Software Engineering best practices
+
+🚀 Building and deploying real-world applications
+
+📊 GitHub Statistics
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=nawrin30&show_icons=true&hide_border=true&count_private=true&theme=tokyonight" width="48%" />
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nawrin30&layout=compact&hide_border=true&theme=tokyonight" width="40%" />
+
+</div>
+
+🔥 GitHub Streak
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com?user=nawrin30&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
+
+</div>
+
+📅 GitHub Contributions
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=nawrin30&show_icons=true&include_all_commits=true&count_private=true&theme=tokyonight&hide_border=true" alt="Nawrin's GitHub Contributions"/>
+</p>
+
+
+
+## 📈 GitHub Activity
+
+<p align="center">
+  <img src="./activity.svg" alt="Nawrin's GitHub Activity Graph">
+</p>
+
+
+🏆 GitHub Trophies
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=nawrin30&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8" alt="Nawrin's GitHub Trophies"/>
+</p>
+
+
+
+## 🐍 Contribution Snake
+
+<h2 align="center">🐍 Contribution Snake</h2>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake.svg" />
+    <img alt="GitHub Contribution Snake Animation"
+      src="https://raw.githubusercontent.com/nawrin30/nawrin30/output/github-contribution-grid-snake-dark.svg" />
+  </picture>
+</p>
+
+
+🎯 Goals
+
+🚀 Build and deploy more real-world full-stack applications
+
+⚛️ Become highly confident with React & TypeScript
+
+🔧 Strengthen backend development with Express.js
+
+🧩 Improve Data Structures & Algorithms
+
+🌐 Learn modern software architecture and best practices
+
+🤝 Contribute to open-source projects
+
+💼 Prepare for a successful career in software development
+
+💡 Developer Mindset
+
+"Build. Learn. Improve. Repeat."
+
+I believe consistent learning, practical projects, and clean code are the foundation of becoming a better software engineer.
+
+🤝 Let's Connect
+
+I'm always interested in software development, web technologies, collaboration, and learning new things.
+
+<div align="center">
+
+<a href="https://www.linkedin.com/in/nawrin-tarannum">
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+&nbsp;
+<a href="mailto:nawrintarannum30@gmail.com">
+  <img src="https://img.shields.io/badge/Gmail-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+<br><br>
+![Profile Views](https://komarev.com/ghpvc/?username=nawrin30&label=Profile%20Views&color=0e75b6&style=flat)
+
+<img src="https://komarev.com/ghpvc/?username=nawrin30&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views"/>
+
+⭐ Thanks for visiting my profile!
+
+</div>
