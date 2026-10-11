@@ -253,7 +253,7 @@ I'm always interested in software development, web technologies, collaboration, 
 
 
 
-https://komarev.com/ghpvc/?username=nawrin30
+
 
 
 ![Profile Views](https://views-counter.vercel.app/badge?pageId=nawrin30%2Fnawrin30)
