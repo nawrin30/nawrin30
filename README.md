@@ -75,6 +75,33 @@ A modern project and task management platform designed to help users organize pr
 
 Focus: Project Management • Task Tracking • Productivity • Team Collaboration
 
+🌦️ SkyCast — Weather Forecasting App
+
+A modern weather forecasting web application providing weather updates, temperature details, and essential weather information through a clean and responsive interface.
+
+Focus: Weather Forecasting • API Integration • Responsive Design • Web Development
+
+🤖 SkillForge AI — AI-Powered Learning Platform
+
+An AI-powered learning platform designed to personalize learning experiences, develop new skills, and help learners achieve their educational goals through intelligent tools.
+
+Focus: Artificial Intelligence • EdTech • Personalized Learning • Web Development
+
+
+🧘 Mindful Breathing Hub
+
+A calming wellness web application featuring guided breathing exercises, meditation sessions, and ambient sounds to support relaxation, focus, and mindfulness.
+
+Focus: Mindfulness • Meditation • Breathing Exercises • User Experience
+
+
+📖 Quran Al-Kareem — Islamic Companion Website
+
+An Islamic web application designed to help users read the Holy Quran, explore Surahs, learn Duas and Dhikr, and access essential Islamic resources in one place.
+
+Focus: Islamic Learning • Quran • Daily Dhikr • Responsive Web Design
+
+
 💬 Real-Time Communication App
 
 A real-time communication application focused on instant messaging and smooth user-to-user interaction with a modern and responsive interface.
