@@ -75,6 +75,10 @@ A modern project and task management platform designed to help users organize pr
 
 Focus: Project Management • Task Tracking • Productivity • Team Collaboration
 
+*Tech Stack:*
+
+![TaskFlow Tech Stack](https://skillicons.dev/icons?i=html,css,js&perline=7&size=60)
+
 🌦️ SkyCast — Weather Forecasting App
 
 A modern weather forecasting web application providing weather updates, temperature details, and essential weather information through a clean and responsive interface.
@@ -82,6 +86,7 @@ A modern weather forecasting web application providing weather updates, temperat
 
 Focus: Weather Forecasting • API Integration • Responsive Design • Web Development
 
+*Tech Stack:*
 
 ![Tech Stack](https://skillicons.dev/icons?i=html,css,js)
 
@@ -91,12 +96,21 @@ An AI-powered learning platform designed to personalize learning experiences, de
 
 Focus: Artificial Intelligence • EdTech • Personalized Learning • Web Development
 
+*Tech Stack:*
+
+
+![Tech Stack](https://skillicons.dev/icons?i=html,css,js,react,tailwind)
+
 
 🧘 Mindful Breathing Hub
 
 A calming wellness web application featuring guided breathing exercises, meditation sessions, and ambient sounds to support relaxation, focus, and mindfulness.
 
 Focus: Mindfulness • Meditation • Breathing Exercises • User Experience
+
+*Tech Stack:*
+
+![Tech Stack](https://skillicons.dev/icons?i=html,css,js,nodejs)
 
 
 📖 Quran Al-Kareem — Islamic Companion Website
@@ -106,17 +120,25 @@ An Islamic web application designed to help users read the Holy Quran, explore S
 Focus: Islamic Learning • Quran • Daily Dhikr • Responsive Web Design
 
 
-💬 Real-Time Communication App
+*Tech Stack:*
 
-A real-time communication application focused on instant messaging and smooth user-to-user interaction with a modern and responsive interface.
 
-Focus: Real-Time Communication • Messaging • User Experience • Web Development
+![Tech Stack](https://skillicons.dev/icons?i=html,css,js)
 
-🛒 EcoMart AI
 
-An AI-powered e-commerce project combining modern online shopping features with intelligent functionality to create a smarter and more engaging shopping experience.
+🛒 Bazar Dor — Daily Essentials Price Comparison Platform
 
-Focus: E-Commerce • AI Integration • Modern UI • Smart User Experience
+Bazar Dor is a web application that helps users explore daily essentials, browse product categories, and compare prices for smarter shopping.
+
+Focus: E-Commerce • Price Comparison • Product Categories • API Integration
+
+*Tech Stack:*
+
+*Tech Stack:*
+
+![Tech Stack](https://skillicons.dev/icons?i=nextjs,react,js,tailwind,git,github)
+
+
 
 📚 Currently Learning
 
