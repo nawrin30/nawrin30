@@ -79,7 +79,9 @@ Focus: Project Management • Task Tracking • Productivity • Team Collaborat
 
 A modern weather forecasting web application providing weather updates, temperature details, and essential weather information through a clean and responsive interface.
 
+
 Focus: Weather Forecasting • API Integration • Responsive Design • Web Development
+![Tech Stack](https://skillicons.dev/icons?i=html,css,js)
 
 🤖 SkillForge AI — AI-Powered Learning Platform
 
