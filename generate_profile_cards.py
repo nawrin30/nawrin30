@@ -21,8 +21,15 @@ GREEN = "#9ece6a"
 
 QUERY = """
 query($login: String!) {
+
   user(login: $login) {
-    login name followers { totalCount } following { totalCount }
+    login
+    name
+    location
+    createdAt
+    followers { totalCount }
+    following { totalCount }
+
     repositories( first: 100, ownerAffiliations: OWNER, privacy: PUBLIC,
                   orderBy: {field: UPDATED_AT, direction: DESC}) {
       totalCount nodes { stargazerCount }
@@ -175,21 +182,123 @@ def main():
     write_svg("github-streak.svg", p)
 
     # Contribution graph (daily count over the last year)
-    p = svg_card("Contribution Activity — Last 12 Months", width=1000, height=300)
+   
+    # Contribution graph — Profile Details Style
+    display_name = user.get("name") or user["login"]
+    location = user.get("location") or "Location not set"
+    joined = date.fromisoformat(user["createdAt"][:10])
+    joined_text = f"{joined.strftime('%B %Y')}"
+
     chart_days = days[-365:]
-    left, top, plot_w, plot_h = 48, 65, 920, 175
-    max_count = max([d["contributionCount"] for d in chart_days] or [1]) or 1
+    total = calendar["totalContributions"]
+
+    width, height = 1000, 300
+    left, top = 665, 75
+    plot_w, plot_h = 270, 175
+    baseline = top + plot_h
+
+    max_count = max(
+        [d["contributionCount"] for d in chart_days] or [1]
+    )
+    max_count = max(max_count, 1)
+    axis_max = ((max_count + 4) // 5) * 5
+    axis_max = max(axis_max, 5)
+
+    p = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" '
+        f'width="{width}" height="{height}" '
+        f'viewBox="0 0 {width} {height}">',
+        '<rect width="1000" height="300" rx="12" fill="#171426"/>',
+
+        # Profile name
+        f'<text x="40" y="48" fill="#ff4081" '
+        f'font-family="Arial,sans-serif" font-size="29">'
+        f'{escape(display_name)} ({escape(USERNAME)})</text>',
+
+        # Contribution information
+        f'<text x="40" y="115" fill="#8be9fd" '
+        f'font-family="Arial,sans-serif" font-size="19">'
+        f'● {total:,} Contributions on GitHub</text>',
+
+        f'<text x="40" y="165" fill="#8be9fd" '
+        f'font-family="Arial,sans-serif" font-size="19">'
+        f'▣ {public_repos} Public Repos</text>',
+
+        f'<text x="40" y="215" fill="#8be9fd" '
+        f'font-family="Arial,sans-serif" font-size="19">'
+        f'◷ Joined GitHub {escape(joined_text)}</text>',
+
+        f'<text x="40" y="265" fill="#8be9fd" '
+        f'font-family="Arial,sans-serif" font-size="17">'
+        f'⌖ {escape(location[:42])}</text>',
+
+        # Chart title
+        '<text x="800" y="40" fill="#8be9fd" '
+        'font-family="Arial,sans-serif" font-size="13" '
+        'text-anchor="middle">contributions in the last year</text>',
+    ]
+
+    # Chart grid and Y-axis labels
+    for value in range(0, axis_max + 1, max(1, axis_max // 4)):
+        y = baseline - (value / axis_max) * plot_h
+
+        p.append(
+            f'<line x1="{left}" y1="{y:.1f}" '
+            f'x2="{left + plot_w}" y2="{y:.1f}" '
+            'stroke="#39334f" stroke-width="1"/>'
+        )
+
+        p.append(
+            f'<text x="{left + plot_w + 12}" y="{y + 4:.1f}" '
+            'fill="#8be9fd" font-size="12">'
+            f'{value}</text>'
+        )
+
+    # Contribution graph points
     points = []
+
     for i, day in enumerate(chart_days):
-        x = left + (i / max(1, len(chart_days)-1)) * plot_w
-        y = top + plot_h - (day["contributionCount"] / max_count) * plot_h
-        points.append(f"{x:.1f},{y:.1f}")
-    p.append(f'<line x1="{left}" y1="{top+plot_h}" x2="{left+plot_w}" y2="{top+plot_h}" stroke="#414868"/>')
+        x = left + (i / max(1, len(chart_days) - 1)) * plot_w
+        y = baseline - (
+            day["contributionCount"] / axis_max
+        ) * plot_h
+
+        points.append((x, y))
+
+    # Filled area graph
     if points:
-        p.append(f'<polyline points="{" ".join(points)}" fill="none" stroke="url(#g)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>')
-    p.append(f'<text x="{left}" y="270" fill="{MUTED}" font-family="Segoe UI,Arial,sans-serif" font-size="11">{escape(chart_days[0]["date"] if chart_days else "")}</text>')
-    p.append(f'<text x="{left+plot_w}" y="270" text-anchor="end" fill="{MUTED}" font-family="Segoe UI,Arial,sans-serif" font-size="11">{escape(chart_days[-1]["date"] if chart_days else "")}</text>')
+        area = (
+            f'M {points[0][0]:.1f},{baseline} '
+            + ' '.join(
+                f'L {x:.1f},{y:.1f}' for x, y in points
+            )
+            + f' L {points[-1][0]:.1f},{baseline} Z'
+        )
+
+        p.append(
+            f'<path d="{area}" fill="#a879f7" '
+            'stroke="none" opacity="0.95"/>'
+        )
+
+    # X-axis date labels
+    if chart_days:
+        for i in range(0, 7):
+            index = round(i * (len(chart_days) - 1) / 6)
+            x = left + (index / max(1, len(chart_days) - 1)) * plot_w
+
+            month = date.fromisoformat(
+                chart_days[index]["date"]
+            ).strftime("%d/%m")
+
+            p.append(
+                f'<text x="{x:.1f}" y="{baseline + 24}" '
+                'fill="#8be9fd" font-size="11" '
+                'text-anchor="middle">'
+                f'{month}</text>'
+            )
+
     write_svg("contributions.svg", p)
+
     print(f"Generated profile cards for @{USERNAME}.")
 
 if __name__ == "__main__":
