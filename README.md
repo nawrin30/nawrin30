@@ -197,7 +197,7 @@ Focus: E-Commerce • Price Comparison • Product Categories • API Integratio
 
 
 
-## 🐍 Contribution Snake
+
 
 <h2 align="center">🐍 Contribution Snake</h2>
 
