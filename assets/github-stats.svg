@@ -1,17 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="495" height="190" viewBox="0 0 495 190">
-<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7aa2f7"/><stop offset="1" stop-color="#bb9af7"/></linearGradient></defs>
-<rect x="1" y="1" width="493" height="188" rx="12" fill="#1a1b27" stroke="#414868"/>
-<text x="24" y="34" fill="#7aa2f7" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">nawrin30&#x27;s GitHub Stats</text>
-<text x="25" y="76" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">TOTAL CONTRIBUTIONS</text>
-<text x="25" y="105" fill="#7aa2f7" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">405</text>
-<text x="190" y="76" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">PUBLIC REPOSITORIES</text>
-<text x="190" y="105" fill="#bb9af7" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">23</text>
-<text x="355" y="76" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">TOTAL STARS</text>
-<text x="355" y="105" fill="#9ece6a" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">0</text>
-<text x="25" y="139" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">COMMITS</text>
-<text x="25" y="168" fill="#7aa2f7" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">381</text>
-<text x="190" y="139" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">PULL REQUESTS</text>
-<text x="190" y="168" fill="#bb9af7" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">0</text>
-<text x="355" y="139" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">ISSUES</text>
-<text x="355" y="168" fill="#9ece6a" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">0</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="270" viewBox="0 0 1000 270">
+<rect width="1000" height="270" rx="16" fill="#151323"/>
+<text x="34" y="57" fill="#ff3b91" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="700">GitHub Statistics</text>
+<circle cx="46" cy="135" r="6" fill="#ff3b91"/>
+<text x="63" y="140" fill="#a6f2ef" font-size="13">TOTAL CONTRIBUTIONS</text>
+<text x="63" y="172" fill="#e6edf3" font-size="25" font-weight="700">406</text>
+<circle cx="366" cy="135" r="6" fill="#f1df58"/>
+<text x="383" y="140" fill="#a6f2ef" font-size="13">PUBLIC REPOSITORIES</text>
+<text x="383" y="172" fill="#e6edf3" font-size="25" font-weight="700">23</text>
+<circle cx="686" cy="135" r="6" fill="#3282ce"/>
+<text x="703" y="140" fill="#a6f2ef" font-size="13">TOTAL STARS</text>
+<text x="703" y="172" fill="#e6edf3" font-size="25" font-weight="700">0</text>
+<circle cx="46" cy="213" r="6" fill="#7136a2"/>
+<text x="63" y="218" fill="#a6f2ef" font-size="13">COMMITS</text>
+<text x="63" y="250" fill="#e6edf3" font-size="25" font-weight="700">382</text>
+<circle cx="366" cy="213" r="6" fill="#ed4b2a"/>
+<text x="383" y="218" fill="#a6f2ef" font-size="13">PULL REQUESTS</text>
+<text x="383" y="250" fill="#e6edf3" font-size="25" font-weight="700">0</text>
+<circle cx="686" cy="213" r="6" fill="#347ba8"/>
+<text x="703" y="218" fill="#a6f2ef" font-size="13">ISSUES</text>
+<text x="703" y="250" fill="#e6edf3" font-size="25" font-weight="700">0</text>
 </svg>
