@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320">
-<rect width="900" height="320" rx="16" fill="#151323"/>
-<text x="34" y="57" fill="#ff3b91" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="700">GitHub Contribution Streak</text>
-<text x="55" y="92" fill="#a6f2ef" font-family="Segoe UI,Arial,sans-serif" font-size="12">CURRENT STREAK</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="190" viewBox="0 0 495 190">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff3b91"/><stop offset="1" stop-color="#7136a2"/></linearGradient></defs>
+<rect x="1" y="1" width="493" height="188" rx="16" fill="#151323"/>
+<text x="28" y="48" fill="#ff3b91" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="700">GitHub Contribution Streak</text>
+<text x="55" y="92" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="12">CURRENT STREAK</text>
 <text x="55" y="121" fill="#ff3b91" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="700">2 days</text>
-<text x="275" y="92" fill="#a6f2ef" font-family="Segoe UI,Arial,sans-serif" font-size="12">LONGEST STREAK</text>
+<text x="275" y="92" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="12">LONGEST STREAK</text>
 <text x="275" y="121" fill="#7136a2" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="700">7 days</text>
-<text x="55" y="157" fill="#a6f2ef" font-family="Segoe UI,Arial,sans-serif" font-size="12">Based on your GitHub contribution calendar (last 12 months).</text>
+<text x="55" y="157" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="12">Based on your GitHub contribution calendar (last 12 months).</text>
 </svg>

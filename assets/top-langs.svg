@@ -1,19 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320">
-<rect width="900" height="320" rx="16" fill="#151323"/>
-<text x="34" y="57" fill="#ff3b91" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="700">Most Used Languages</text>
-<rect x="75.00" y="112" width="230.59" height="24" fill="#f1df58"/>
-<rect x="305.59" y="112" width="220.44" height="24" fill="#3282ce"/>
-<rect x="526.03" y="112" width="147.61" height="24" fill="#7136a2"/>
-<rect x="673.64" y="112" width="120.08" height="24" fill="#ed4b2a"/>
-<rect x="793.72" y="112" width="31.07" height="24" fill="#347ba8"/>
-<circle cx="82" cy="168" r="9" fill="#f1df58"/>
-<text x="102" y="174" fill="#a6f2ef" font-size="21">JavaScript 30.75%</text>
-<circle cx="502" cy="168" r="9" fill="#3282ce"/>
-<text x="522" y="174" fill="#a6f2ef" font-size="21">CSS 29.39%</text>
-<circle cx="82" cy="216" r="9" fill="#7136a2"/>
-<text x="102" y="222" fill="#a6f2ef" font-size="21">HTML 19.68%</text>
-<circle cx="502" cy="216" r="9" fill="#ed4b2a"/>
-<text x="522" y="222" fill="#a6f2ef" font-size="21">TypeScript 16.01%</text>
-<circle cx="82" cy="264" r="9" fill="#347ba8"/>
-<text x="102" y="270" fill="#a6f2ef" font-size="21">Python 4.14%</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="320" viewBox="0 0 580 320">
+<rect width="580" height="320" rx="16" fill="#151323"/>
+<text x="48" y="68" fill="#ff3b91" font-family="Segoe UI,Arial,sans-serif" font-size="34" font-weight="500">Most Used Languages</text>
+<rect x="48.00" y="108" width="148.91" height="15" fill="#f4df4e"/>
+<rect x="196.41" y="108" width="142.37" height="15" fill="#3178c6"/>
+<rect x="338.28" y="108" width="95.50" height="15" fill="#6f35a5"/>
+<rect x="433.28" y="108" width="77.78" height="15" fill="#e34c26"/>
+<rect x="510.56" y="108" width="21.81" height="15" fill="#3572a5"/>
+<rect x="48" y="108" width="484" height="15" rx="8" fill="none" stroke="#151323" stroke-width="1"/>
+<circle cx="57" cy="163" r="9" fill="#f4df4e"/>
+<text x="76" y="168" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="19">JavaScript 30.66%</text>
+<circle cx="347" cy="163" r="9" fill="#3178c6"/>
+<text x="366" y="168" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="19">CSS 29.31%</text>
+<circle cx="57" cy="211" r="9" fill="#6f35a5"/>
+<text x="76" y="216" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="19">HTML 19.63%</text>
+<circle cx="347" cy="211" r="9" fill="#e34c26"/>
+<text x="366" y="216" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="19">TypeScript 15.97%</text>
+<circle cx="57" cy="259" r="9" fill="#3572a5"/>
+<text x="76" y="264" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="19">Python 4.40%</text>
 </svg>
