@@ -174,12 +174,54 @@ def main():
     write_svg("top-langs.svg", p)
 
     # Contribution streak card: calculated from GitHub's contribution calendar.
+    
+    # GitHub Streak Card - Three Column Design
     current, longest = streak_values(days)
-    p = svg_card("GitHub Contribution Streak")
-    label_value(p, 55, 92, "CURRENT STREAK", f"{current} days", ACCENT, 27)
-    label_value(p, 275, 92, "LONGEST STREAK", f"{longest} days", PURPLE, 27)
-    p.append(f'<text x="55" y="157" fill="{MUTED}" font-family="Segoe UI,Arial,sans-serif" font-size="12">Based on your GitHub contribution calendar (last 12 months).</text>')
+
+    width, height = 1000, 220
+    p = svg_card("GitHub Contribution Streak", width, height)
+
+    # Column separators
+    p.append('<line x1="333" y1="55" x2="333" y2="195" stroke="#414868" stroke-width="1.5"/>')
+    p.append('<line x1="667" y1="55" x2="667" y2="195" stroke="#414868" stroke-width="1.5"/>')
+
+    # Left: Total Contributions
+    p.append(f'<text x="166" y="105" text-anchor="middle" fill="#ff3e8a" font-family="Arial" font-size="34" font-weight="700">{calendar["totalContributions"]:,}</text>')
+    p.append('<text x="166" y="135" text-anchor="middle" fill="#ff3e8a" font-family="Arial" font-size="15">Total Contributions</text>')
+
+    date_start = days[0]["date"] if days else ""
+    date_end = days[-1]["date"] if days else ""
+
+    p.append(f'<text x="166" y="165" text-anchor="middle" fill="#a9b1d6" font-family="Arial" font-size="12">{date_start} - {date_end}</text>')
+
+    # Center: Current Streak Ring
+    cx, cy, radius = 500, 112, 39
+    circumference = 2 * 3.14159 * radius
+    progress = current / max(longest, current, 1)
+    offset = circumference * (1 - progress)
+
+    p.append(f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" stroke="#49233e" stroke-width="6"/>')
+
+    p.append(
+        f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="none" '
+        f'stroke="#ff3e8a" stroke-width="6" '
+        f'stroke-dasharray="{circumference:.2f}" '
+        f'stroke-dashoffset="{offset:.2f}" '
+        f'stroke-linecap="round" transform="rotate(-90 {cx} {cy})"/>'
+    )
+
+    p.append(f'<text x="{cx}" y="{cy+9}" text-anchor="middle" fill="#ffd43b" font-family="Arial" font-size="27" font-weight="700">{current}</text>')
+
+    p.append('<text x="500" y="170" text-anchor="middle" fill="#ffd43b" font-family="Arial" font-size="15" font-weight="700">Current Streak</text>')
+    p.append('<text x="500" y="192" text-anchor="middle" fill="#a9b1d6" font-family="Arial" font-size="12">Consecutive days</text>')
+
+    # Right: Longest Streak
+    p.append(f'<text x="834" y="105" text-anchor="middle" fill="#ff3e8a" font-family="Arial" font-size="34" font-weight="700">{longest}</text>')
+    p.append('<text x="834" y="135" text-anchor="middle" fill="#ff3e8a" font-family="Arial" font-size="15">Longest Streak</text>')
+    p.append('<text x="834" y="165" text-anchor="middle" fill="#a9b1d6" font-family="Arial" font-size="12">Best consecutive days</text>')
+
     write_svg("github-streak.svg", p)
+
 
     # Contribution graph (daily count over the last year)
    
