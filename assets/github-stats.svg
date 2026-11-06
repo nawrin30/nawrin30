@@ -1,33 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300">
-<rect width="1000" height="300" rx="18" fill="#151323"/>
-<text x="42" y="52" fill="#ff3b91" font-family="Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">nawrin30&#39;s GitHub Stats</text>
-<line x1="520" y1="82" x2="520" y2="260" stroke="#454052" stroke-width="1.5"/>
-<circle cx="52" cy="100" r="6" fill="#f4d94e"/>
-<text x="72" y="105" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">TOTAL STARS EARNED:</text>
-<text x="390" y="105" fill="#e6edf3" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">0</text>
-<circle cx="52" cy="134" r="6" fill="#ff3b91"/>
-<text x="72" y="139" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">TOTAL COMMITS:</text>
-<text x="390" y="139" fill="#e6edf3" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">385</text>
-<circle cx="52" cy="168" r="6" fill="#f4d94e"/>
-<text x="72" y="173" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">TOTAL PULL REQUESTS:</text>
-<text x="390" y="173" fill="#e6edf3" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">0</text>
-<circle cx="52" cy="202" r="6" fill="#9b59b6"/>
-<text x="72" y="207" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">TOTAL ISSUES:</text>
-<text x="390" y="207" fill="#e6edf3" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">0</text>
-<circle cx="52" cy="236" r="6" fill="#3282ce"/>
-<text x="72" y="241" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="600">PUBLIC REPOSITORIES:</text>
-<text x="390" y="241" fill="#e6edf3" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">23</text>
-<circle cx="445" cy="170" r="53" fill="none" stroke="#30283d" stroke-width="13"/>
-<circle cx="445" cy="170" r="53" fill="none" stroke="#ff3b91" stroke-width="13" stroke-dasharray="333.01 0.00" stroke-dashoffset="0.00" transform="rotate(-90 445 170)"/>
-<text x="445" y="175" text-anchor="middle" fill="#e6edf3" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="700">409</text>
-<text x="445" y="195" text-anchor="middle" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="10">CONTRIBUTIONS</text>
-<text x="620" y="130" text-anchor="middle" fill="#e6edf3" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="700">409</text>
-<text x="620" y="160" text-anchor="middle" fill="#ff3b91" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="600">TOTAL CONTRIBUTIONS</text>
-<line x1="690" y1="95" x2="690" y2="205" stroke="#454052"/>
-<text x="760" y="130" text-anchor="middle" fill="#e6edf3" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="700">2 days</text>
-<text x="760" y="160" text-anchor="middle" fill="#f4d94e" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="600">CURRENT STREAK</text>
-<line x1="830" y1="95" x2="830" y2="205" stroke="#454052"/>
-<text x="900" y="130" text-anchor="middle" fill="#e6edf3" font-family="Segoe UI,Arial,sans-serif" font-size="26" font-weight="700">7 days</text>
-<text x="900" y="160" text-anchor="middle" fill="#ff3b91" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="600">LONGEST STREAK</text>
-<text x="565" y="245" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="12">Based on your GitHub contribution calendar (last 12 months)</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="190" viewBox="0 0 495 190">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7aa2f7"/><stop offset="1" stop-color="#bb9af7"/></linearGradient></defs>
+<rect x="1" y="1" width="493" height="188" rx="12" fill="#1a1b27" stroke="#414868"/>
+<text x="24" y="34" fill="#7aa2f7" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">nawrin30&#x27;s GitHub Stats</text>
+<text x="25" y="76" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">TOTAL CONTRIBUTIONS</text>
+<text x="25" y="105" fill="#7aa2f7" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">410</text>
+<text x="190" y="76" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">PUBLIC REPOSITORIES</text>
+<text x="190" y="105" fill="#bb9af7" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">23</text>
+<text x="355" y="76" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">TOTAL STARS</text>
+<text x="355" y="105" fill="#9ece6a" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">0</text>
+<text x="25" y="139" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">COMMITS</text>
+<text x="25" y="168" fill="#7aa2f7" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">386</text>
+<text x="190" y="139" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">PULL REQUESTS</text>
+<text x="190" y="168" fill="#bb9af7" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">0</text>
+<text x="355" y="139" fill="#a9b1d6" font-family="Segoe UI,Arial,sans-serif" font-size="12">ISSUES</text>
+<text x="355" y="168" fill="#9ece6a" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="700">0</text>
 </svg>

@@ -1,20 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="580" height="320" viewBox="0 0 580 320">
-<rect width="580" height="320" rx="16" fill="#151323"/>
-<text x="48" y="68" fill="#ff3b91" font-family="Segoe UI,Arial,sans-serif" font-size="34" font-weight="500">Most Used Languages</text>
-<rect x="48.00" y="108" width="148.91" height="15" fill="#f4df4e"/>
-<rect x="196.41" y="108" width="142.37" height="15" fill="#3178c6"/>
-<rect x="338.28" y="108" width="95.50" height="15" fill="#6f35a5"/>
-<rect x="433.28" y="108" width="77.78" height="15" fill="#e34c26"/>
-<rect x="510.56" y="108" width="21.81" height="15" fill="#3572a5"/>
-<rect x="48" y="108" width="484" height="15" rx="8" fill="none" stroke="#151323" stroke-width="1"/>
-<circle cx="57" cy="163" r="9" fill="#f4df4e"/>
-<text x="76" y="168" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="19">JavaScript 30.66%</text>
-<circle cx="347" cy="163" r="9" fill="#3178c6"/>
-<text x="366" y="168" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="19">CSS 29.31%</text>
-<circle cx="57" cy="211" r="9" fill="#6f35a5"/>
-<text x="76" y="216" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="19">HTML 19.63%</text>
-<circle cx="347" cy="211" r="9" fill="#e34c26"/>
-<text x="366" y="216" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="19">TypeScript 15.97%</text>
-<circle cx="57" cy="259" r="9" fill="#3572a5"/>
-<text x="76" y="264" fill="#9ff3ed" font-family="Segoe UI,Arial,sans-serif" font-size="19">Python 4.40%</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="190" viewBox="0 0 495 190">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7aa2f7"/><stop offset="1" stop-color="#bb9af7"/></linearGradient></defs>
+<rect x="1" y="1" width="493" height="188" rx="12" fill="#1a1b27" stroke="#414868"/>
+<text x="24" y="34" fill="#7aa2f7" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">Most Used Languages</text>
+<rect x="25.00" y="66" width="136.83" height="10" rx="4" fill="#7aa2f7"/>
+<rect x="161.83" y="66" width="130.81" height="10" rx="4" fill="#bb9af7"/>
+<rect x="292.64" y="66" width="87.59" height="10" rx="4" fill="#9ece6a"/>
+<rect x="380.23" y="66" width="71.25" height="10" rx="4" fill="#e0af68"/>
+<rect x="451.48" y="66" width="18.40" height="10" rx="4" fill="#f7768e"/>
+<rect x="469.88" y="66" width="1.00" height="10" rx="4" fill="#7dcfff"/>
+<circle cx="29" cy="101" r="4" fill="#7aa2f7"/>
+<text x="41" y="105" fill="#c0caf5" font-family="Segoe UI,Arial,sans-serif" font-size="12">JavaScript</text>
+<text x="235" y="105" fill="#a9b1d6" text-anchor="end" font-family="Segoe UI,Arial,sans-serif" font-size="12">30.7%</text>
+<circle cx="264" cy="101" r="4" fill="#bb9af7"/>
+<text x="276" y="105" fill="#c0caf5" font-family="Segoe UI,Arial,sans-serif" font-size="12">CSS</text>
+<text x="470" y="105" fill="#a9b1d6" text-anchor="end" font-family="Segoe UI,Arial,sans-serif" font-size="12">29.4%</text>
+<circle cx="29" cy="128" r="4" fill="#9ece6a"/>
+<text x="41" y="132" fill="#c0caf5" font-family="Segoe UI,Arial,sans-serif" font-size="12">HTML</text>
+<text x="235" y="132" fill="#a9b1d6" text-anchor="end" font-family="Segoe UI,Arial,sans-serif" font-size="12">19.7%</text>
+<circle cx="264" cy="128" r="4" fill="#e0af68"/>
+<text x="276" y="132" fill="#c0caf5" font-family="Segoe UI,Arial,sans-serif" font-size="12">TypeScript</text>
+<text x="470" y="132" fill="#a9b1d6" text-anchor="end" font-family="Segoe UI,Arial,sans-serif" font-size="12">16.0%</text>
+<circle cx="29" cy="155" r="4" fill="#f7768e"/>
+<text x="41" y="159" fill="#c0caf5" font-family="Segoe UI,Arial,sans-serif" font-size="12">Python</text>
+<text x="235" y="159" fill="#a9b1d6" text-anchor="end" font-family="Segoe UI,Arial,sans-serif" font-size="12">4.1%</text>
+<circle cx="264" cy="155" r="4" fill="#7dcfff"/>
+<text x="276" y="159" fill="#c0caf5" font-family="Segoe UI,Arial,sans-serif" font-size="12">Dockerfile</text>
+<text x="470" y="159" fill="#a9b1d6" text-anchor="end" font-family="Segoe UI,Arial,sans-serif" font-size="12">0.0%</text>
 </svg>
