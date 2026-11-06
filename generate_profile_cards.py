@@ -140,37 +140,153 @@ def main():
     total = calendar["totalContributions"]
 
     # Main statistics card
-    p = svg_card(f"{USERNAME}'s GitHub Stats")
-    label_value(p, 25, 76, "TOTAL CONTRIBUTIONS", f"{total:,}", ACCENT)
-    label_value(p, 190, 76, "PUBLIC REPOSITORIES", public_repos, PURPLE)
-    label_value(p, 355, 76, "TOTAL STARS", stars, GREEN)
-    label_value(p, 25, 139, "COMMITS", collection["totalCommitContributions"], ACCENT)
-    label_value(p, 190, 139, "PULL REQUESTS", collection["totalPullRequestContributions"], PURPLE)
-    label_value(p, 355, 139, "ISSUES", collection["totalIssueContributions"], GREEN)
+   
+    # Main Statistics Card — Dark Purple Dashboard Design
+    p = svg_card(f"{USERNAME}'s GitHub Stats", width=495, height=210)
+
+    stat_items = [
+        ("TOTAL CONTRIBUTIONS", f"{total:,}", "#ff3e8a"),
+        ("PUBLIC REPOSITORIES", public_repos, "#7dcfff"),
+        ("TOTAL STARS", stars, "#ffd43b"),
+        ("COMMITS", collection["totalCommitContributions"], "#bb9af7"),
+        ("PULL REQUESTS", collection["totalPullRequestContributions"], "#9ece6a"),
+        ("ISSUES", collection["totalIssueContributions"], "#f7768e"),
+    ]
+
+    positions = [
+        (90, 91), (247, 91), (405, 91),
+        (90, 165), (247, 165), (405, 165)
+    ]
+
+    for (label, value, color), (cx, cy) in zip(stat_items, positions):
+        p.append(
+            f'<text x="{cx}" y="{cy-20}" text-anchor="middle" '
+            f'fill="{MUTED}" font-family="Segoe UI,Arial,sans-serif" '
+            f'font-size="10" font-weight="600">{escape(label)}</text>'
+        )
+
+        p.append(
+            f'<text x="{cx}" y="{cy+13}" text-anchor="middle" '
+            f'fill="{color}" font-family="Segoe UI,Arial,sans-serif" '
+            f'font-size="27" font-weight="700">{escape(str(value))}</text>'
+        )
+
+    # Vertical separators
+    for x in (168, 326):
+        p.append(
+            f'<line x1="{x}" y1="57" x2="{x}" y2="185" '
+            f'stroke="#343044" stroke-width="1"/>'
+        )
+
+    # Horizontal separator
+    p.append(
+        '<line x1="20" y1="124" x2="475" y2="124" '
+        'stroke="#343044" stroke-width="1"/>'
+    )
+
     write_svg("github-stats.svg", p)
 
     # Top languages card
-    p = svg_card("Most Used Languages", height=190)
-    top = languages.most_common(6)
+  
+    # Top Languages Card — Dark Purple Dashboard Design
+    p = svg_card("Most Used Languages", width=495, height=210)
+
+    top = languages.most_common(5)
     total_bytes = sum(languages.values()) or 1
-    colors = ["#7aa2f7", "#bb9af7", "#9ece6a", "#e0af68", "#f7768e", "#7dcfff"]
-    x, y, bar_w, gap = 25, 66, 445, 13
-    used = 0
-    for idx, (lang, amount) in enumerate(top):
-        pct = amount / total_bytes * 100
-        w = bar_w * amount / total_bytes
-        p.append(f'<rect x="{x+used:.2f}" y="{y}" width="{max(w,1):.2f}" height="10" rx="4" fill="{colors[idx]}"/>')
-        used += w
-    for idx, (lang, amount) in enumerate(top):
-        col = idx % 2
-        row = idx // 2
-        lx = 25 + col * 235
-        ly = 105 + row * 27
-        p.append(f'<circle cx="{lx+4}" cy="{ly-4}" r="4" fill="{colors[idx]}"/>')
-        p.append(f'<text x="{lx+16}" y="{ly}" fill="{TEXT}" font-family="Segoe UI,Arial,sans-serif" font-size="12">{escape(lang)}</text>')
-        p.append(f'<text x="{lx+210}" y="{ly}" fill="{MUTED}" text-anchor="end" font-family="Segoe UI,Arial,sans-serif" font-size="12">{amount/total_bytes*100:.1f}%</text>')
-    if not top:
-        p.append(f'<text x="25" y="90" fill="{MUTED}" font-family="Segoe UI,Arial,sans-serif" font-size="13">No language data available yet.</text>')
+
+    colors = [
+        "#ff3e8a",
+        "#7dcfff",
+        "#ffd43b",
+        "#bb9af7",
+        "#9ece6a"
+    ]
+
+    bar_x = 25
+    bar_y = 57
+    bar_w = 445
+    bar_h = 12
+
+    if top:
+
+        # Language distribution bar background
+        p.append(
+            f'<rect x="{bar_x}" y="{bar_y}" '
+            f'width="{bar_w}" height="{bar_h}" '
+            f'rx="6" fill="#343044"/>'
+        )
+
+        # Multiple language color segments
+        used = 0.0
+
+        for idx, (lang, amount) in enumerate(top):
+            segment_w = bar_w * amount / total_bytes
+
+            if segment_w > 0:
+                p.append(
+                    f'<rect x="{bar_x+used:.2f}" y="{bar_y}" '
+                    f'width="{segment_w:.2f}" height="{bar_h}" '
+                    f'fill="{colors[idx]}"/>'
+                )
+
+                used += segment_w
+
+        # Rounded border
+        p.append(
+            f'<rect x="{bar_x}" y="{bar_y}" '
+            f'width="{bar_w}" height="{bar_h}" '
+            f'rx="6" fill="none" stroke="#343044"/>'
+        )
+
+        # Individual language details
+        for idx, (lang, amount) in enumerate(top):
+
+            y = 91 + idx * 23
+            pct = amount / total_bytes * 100
+
+            # Language color indicator
+            p.append(
+                f'<circle cx="30" cy="{y-4}" r="4" '
+                f'fill="{colors[idx]}"/>'
+            )
+
+            # Language name
+            p.append(
+                f'<text x="43" y="{y}" fill="{TEXT}" '
+                f'font-family="Segoe UI,Arial,sans-serif" '
+                f'font-size="12" font-weight="600">'
+                f'{escape(lang)}</text>'
+            )
+
+            # Progress bar background
+            p.append(
+                f'<rect x="175" y="{y-9}" width="220" '
+                f'height="6" rx="3" fill="#343044"/>'
+            )
+
+            # Progress bar value
+            p.append(
+                f'<rect x="175" y="{y-9}" '
+                f'width="{220*pct/100:.2f}" '
+                f'height="6" rx="3" fill="{colors[idx]}"/>'
+            )
+
+            # Percentage
+            p.append(
+                f'<text x="465" y="{y}" text-anchor="end" '
+                f'fill="{colors[idx]}" '
+                f'font-family="Segoe UI,Arial,sans-serif" '
+                f'font-size="11" font-weight="700">'
+                f'{pct:.1f}%</text>'
+            )
+
+    else:
+        p.append(
+            f'<text x="25" y="100" fill="{MUTED}" '
+            f'font-family="Segoe UI,Arial,sans-serif" '
+            f'font-size="13">No language data available yet.</text>'
+        )
+
     write_svg("top-langs.svg", p)
 
     # Contribution streak card: calculated from GitHub's contribution calendar.
