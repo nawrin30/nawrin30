@@ -11,14 +11,13 @@ from html import escape
 USERNAME = os.getenv("GH_USERNAME", "nawrin30")
 TOKEN = os.getenv("GH_TOKEN")
 OUT = "assets"
-BG = "#1a1b27"
-CARD = "#24283b"
-TEXT = "#c0caf5"
-MUTED = "#a9b1d6"
-ACCENT = "#7aa2f7"
-PURPLE = "#bb9af7"
-GREEN = "#9ece6a"
-
+BG = "#0d1117"
+CARD = "#151323"
+TEXT = "#e6edf3"
+MUTED = "#a6f2ef"
+ACCENT = "#ff3b91"
+PURPLE = "#7136a2"
+GREEN = "#3282ce"
 QUERY = """
 query($login: String!) {
 
@@ -93,12 +92,11 @@ def fetch_languages():
                 print(f"Skipping languages for {repo.get('name')}: {exc}")
     return totals
 
-def svg_card(title, width=495, height=190):
+def svg_card(title, width=900, height=320):
     return [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
-        '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7aa2f7"/><stop offset="1" stop-color="#bb9af7"/></linearGradient></defs>',
-        f'<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="12" fill="{BG}" stroke="#414868"/>',
-        f'<text x="24" y="34" fill="{ACCENT}" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="700">{escape(title)}</text>',
+        f'<rect width="{width}" height="{height}" rx="16" fill="{CARD}"/>',
+        f'<text x="34" y="57" fill="{ACCENT}" font-family="Segoe UI,Arial,sans-serif" font-size="29" font-weight="700">{escape(title)}</text>',
     ]
 
 def label_value(parts, x, y, label, value, color=TEXT, size=23):
@@ -140,37 +138,84 @@ def main():
     total = calendar["totalContributions"]
 
     # Main statistics card
-    p = svg_card(f"{USERNAME}'s GitHub Stats")
-    label_value(p, 25, 76, "TOTAL CONTRIBUTIONS", f"{total:,}", ACCENT)
-    label_value(p, 190, 76, "PUBLIC REPOSITORIES", public_repos, PURPLE)
-    label_value(p, 355, 76, "TOTAL STARS", stars, GREEN)
-    label_value(p, 25, 139, "COMMITS", collection["totalCommitContributions"], ACCENT)
-    label_value(p, 190, 139, "PULL REQUESTS", collection["totalPullRequestContributions"], PURPLE)
-    label_value(p, 355, 139, "ISSUES", collection["totalIssueContributions"], GREEN)
-    write_svg("github-stats.svg", p)
+     
+    p = svg_card("GitHub Statistics", width=1000, height=270)
 
+    stats = [
+        ("TOTAL CONTRIBUTIONS", f"{total:,}", ACCENT),
+        ("PUBLIC REPOSITORIES", public_repos, "#f1df58"),
+        ("TOTAL STARS", stars, GREEN),
+        ("COMMITS", collection["totalCommitContributions"], PURPLE),
+        ("PULL REQUESTS", collection["totalPullRequestContributions"], "#ed4b2a"),
+        ("ISSUES", collection["totalIssueContributions"], "#347ba8")
+    ]
+
+    for i, (label, value, color) in enumerate(stats):
+        col = i % 3
+        row = i // 3
+        x = 38 + col * 320
+        y = 142 + row * 78
+
+        p.append(
+            f'<circle cx="{x+8}" cy="{y-7}" r="6" fill="{color}"/>'
+        )
+
+        p.append(
+            f'<text x="{x+25}" y="{y-2}" fill="{MUTED}" font-size="13">{label}</text>'
+        )
+
+        p.append(
+            f'<text x="{x+25}" y="{y+30}" fill="{TEXT}" font-size="25" font-weight="700">{escape(str(value))}</text>'
+        )
+
+    write_svg("github-stats.svg", p)
     # Top languages card
-    p = svg_card("Most Used Languages", height=190)
-    top = languages.most_common(6)
+        # Top languages card
+    p = svg_card("Most Used Languages", width=900, height=320)
+
+    top = languages.most_common(5)
     total_bytes = sum(languages.values()) or 1
-    colors = ["#7aa2f7", "#bb9af7", "#9ece6a", "#e0af68", "#f7768e", "#7dcfff"]
-    x, y, bar_w, gap = 25, 66, 445, 13
+
+    colors = [
+        "#f1df58",
+        "#3282ce",
+        "#7136a2",
+        "#ed4b2a",
+        "#347ba8"
+    ]
+
+    x, y = 75, 112
+    bar_w, bar_h = 750, 24
     used = 0
+
     for idx, (lang, amount) in enumerate(top):
-        pct = amount / total_bytes * 100
         w = bar_w * amount / total_bytes
-        p.append(f'<rect x="{x+used:.2f}" y="{y}" width="{max(w,1):.2f}" height="10" rx="4" fill="{colors[idx]}"/>')
+
+        p.append(
+            f'<rect x="{x+used:.2f}" y="{y}" width="{w:.2f}" height="{bar_h}" fill="{colors[idx]}"/>'
+        )
         used += w
+
     for idx, (lang, amount) in enumerate(top):
         col = idx % 2
         row = idx // 2
-        lx = 25 + col * 235
-        ly = 105 + row * 27
-        p.append(f'<circle cx="{lx+4}" cy="{ly-4}" r="4" fill="{colors[idx]}"/>')
-        p.append(f'<text x="{lx+16}" y="{ly}" fill="{TEXT}" font-family="Segoe UI,Arial,sans-serif" font-size="12">{escape(lang)}</text>')
-        p.append(f'<text x="{lx+210}" y="{ly}" fill="{MUTED}" text-anchor="end" font-family="Segoe UI,Arial,sans-serif" font-size="12">{amount/total_bytes*100:.1f}%</text>')
+
+        lx = 75 + col * 420
+        ly = 174 + row * 48
+
+        p.append(
+            f'<circle cx="{lx+7}" cy="{ly-6}" r="9" fill="{colors[idx]}"/>'
+        )
+
+        p.append(
+            f'<text x="{lx+27}" y="{ly}" fill="{MUTED}" font-size="21">{escape(lang)} {amount/total_bytes*100:.2f}%</text>'
+        )
+
     if not top:
-        p.append(f'<text x="25" y="90" fill="{MUTED}" font-family="Segoe UI,Arial,sans-serif" font-size="13">No language data available yet.</text>')
+        p.append(
+            f'<text x="75" y="175" fill="{MUTED}">No language data available.</text>'
+        )
+
     write_svg("top-langs.svg", p)
 
     # Contribution streak card: calculated from GitHub's contribution calendar.
