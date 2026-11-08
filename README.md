@@ -69,74 +69,129 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 
 🚀 Featured Projects
 
-📋 TaskFlow — Smart Task & Project Management System
+<h2 align="center">🚀 Featured Projects</h2>
+<p align="center">
+  A showcase of my projects, creativity, and development journey.
+</p>
 
-A modern project and task management platform designed to help users organize projects, manage tasks, track progress, and improve productivity.
+<table>
+<tr>
+<td width="50%" valign="top">
 
-Focus: Project Management • Task Tracking • Productivity • Team Collaboration
+<h3>📋 TaskFlow</h3>
+<p><b>Smart Task & Project Management System</b></p>
 
-*Tech Stack:*
+<p>A modern platform to organize projects, manage tasks, track progress, and improve productivity.</p>
 
-![TaskFlow Tech Stack](https://skillicons.dev/icons?i=html,css,js&perline=7&size=60)
+<p><b>Focus:</b> Project Management • Task Tracking • Productivity • Team Collaboration</p>
 
-🌦️ SkyCast — Weather Forecasting App
+<p><b>Tech Stack:</b></p>
+<img src="https://skillicons.dev/icons?i=html,css,js&perline=3" height="42"/>
 
-A modern weather forecasting web application providing weather updates, temperature details, and essential weather information through a clean and responsive interface.
+<p>
+<a href="https://nawrin30.github.io/TaskFlow---Smart-Task-Project-Management-System/">🔗 Live Demo</a> ·
+<a href="https://github.com/nawrin30/TaskFlow---Smart-Task-Project-Management-System">📂 Source Code</a>
+</p>
 
+</td>
+<td width="50%" valign="top">
 
-Focus: Weather Forecasting • API Integration • Responsive Design • Web Development
+<h3>🌦️ SkyCast</h3>
+<p><b>Weather Forecasting App</b></p>
 
-*Tech Stack:*
+<p>A responsive weather application providing weather updates, temperature details, and essential weather information.</p>
 
-![Tech Stack](https://skillicons.dev/icons?i=html,css,js)
+<p><b>Focus:</b> Weather Forecasting • API Integration • Responsive Design • Web Development</p>
 
-🤖 SkillForge AI — AI-Powered Learning Platform
+<p><b>Tech Stack:</b></p>
+<img src="https://skillicons.dev/icons?i=html,css,js&perline=3" height="42"/>
 
-An AI-powered learning platform designed to personalize learning experiences, develop new skills, and help learners achieve their educational goals through intelligent tools.
+<p>
+<a href="YOUR_SKYCAST_LIVE_URL">🔗 Live Demo</a> ·
+<a href="YOUR_SKYCAST_REPO_URL">📂 Source Code</a>
+</p>
 
-Focus: Artificial Intelligence • EdTech • Personalized Learning • Web Development
+</td>
+</tr>
 
-*Tech Stack:*
+<tr>
+<td width="50%" valign="top">
 
+<h3>🤖 SkillForge AI</h3>
+<p><b>AI-Powered Learning Platform</b></p>
 
-![Tech Stack](https://skillicons.dev/icons?i=html,css,js,react,tailwind)
+<p>An AI-powered learning platform designed to personalize learning experiences and help learners develop new skills.</p>
 
+<p><b>Focus:</b> Artificial Intelligence • EdTech • Personalized Learning • Web Development</p>
 
-🧘 Mindful Breathing Hub
+<p><b>Tech Stack:</b></p>
+<img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind&perline=5" height="42"/>
 
-A calming wellness web application featuring guided breathing exercises, meditation sessions, and ambient sounds to support relaxation, focus, and mindfulness.
+<p>
+<a href="YOUR_SKILLFORGE_LIVE_URL">🔗 Live Demo</a> ·
+<a href="YOUR_SKILLFORGE_REPO_URL">📂 Source Code</a>
+</p>
 
-Focus: Mindfulness • Meditation • Breathing Exercises • User Experience
+</td>
+<td width="50%" valign="top">
 
-*Tech Stack:*
+<h3>🧘 Mindful Breathing Hub</h3>
+<p><b>Wellness & Meditation Platform</b></p>
 
-![Tech Stack](https://skillicons.dev/icons?i=html,css,js,nodejs)
+<p>A calming wellness application featuring guided breathing exercises, meditation sessions, and ambient sounds.</p>
 
+<p><b>Focus:</b> Mindfulness • Meditation • Breathing Exercises • User Experience</p>
 
-📖 Quran Al-Kareem — Islamic Companion Website
+<p><b>Tech Stack:</b></p>
+<img src="https://skillicons.dev/icons?i=html,css,js,nodejs&perline=4" height="42"/>
 
-An Islamic web application designed to help users read the Holy Quran, explore Surahs, learn Duas and Dhikr, and access essential Islamic resources in one place.
+<p>
+<a href="YOUR_MINDFUL_LIVE_URL">🔗 Live Demo</a> ·
+<a href="YOUR_MINDFUL_REPO_URL">📂 Source Code</a>
+</p>
 
-Focus: Islamic Learning • Quran • Daily Dhikr • Responsive Web Design
+</td>
+</tr>
 
+<tr>
+<td width="50%" valign="top">
 
-*Tech Stack:*
+<h3>📖 Quran Al-Kareem</h3>
+<p><b>Islamic Companion Website</b></p>
 
+<p>An Islamic web application to read the Holy Quran, explore Surahs, learn Duas and Dhikr, and access Islamic resources.</p>
 
-![Tech Stack](https://skillicons.dev/icons?i=html,css,js)
+<p><b>Focus:</b> Islamic Learning • Quran • Daily Dhikr • Responsive Web Design</p>
 
+<p><b>Tech Stack:</b></p>
+<img src="https://skillicons.dev/icons?i=html,css,js&perline=3" height="42"/>
 
-🛒 Bazar Dor — Daily Essentials Price Comparison Platform
+<p>
+<a href="https://quran-al-kareem-1.netlify.app/">🔗 Live Demo</a> ·
+<a href="https://github.com/nawrin30/Quran-Al-Kareem">📂 Source Code</a>
+</p>
 
-Bazar Dor is a web application that helps users explore daily essentials, browse product categories, and compare prices for smarter shopping.
+</td>
+<td width="50%" valign="top">
 
-Focus: E-Commerce • Price Comparison • Product Categories • API Integration
+<h3>🛒 Bazar Dor</h3>
+<p><b>Daily Essentials Price Comparison Platform</b></p>
 
+<p>A web application that helps users explore daily essentials, browse product categories, and compare prices for smarter shopping.</p>
 
+<p><b>Focus:</b> E-Commerce • Price Comparison • Product Categories • API Integration</p>
 
-*Tech Stack:*
+<p><b>Tech Stack:</b></p>
+<img src="https://skillicons.dev/icons?i=nextjs,react,js,tailwind,git,github&perline=6" height="42"/>
 
-![Tech Stack](https://skillicons.dev/icons?i=nextjs,react,js,tailwind,git,github)
+<p>
+<a href="YOUR_BAZARDOR_LIVE_URL">🔗 Live Demo</a> ·
+<a href="YOUR_BAZARDOR_REPO_URL">📂 Source Code</a>
+</p>
+
+</td>
+</tr>
+</table>
 
 
 
