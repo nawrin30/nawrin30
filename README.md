@@ -151,20 +151,26 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 💡 Software Engineering best practices
 
 🚀 Building and deploying real-world applications
-## 📊 GitHub Statistics
+
+📊 GitHub Statistics
 
 <div align="center">
 
-<img src="./assets/github-stats.svg" width="100%" alt="Nawrin's GitHub Statistics"/>
-
-</div>
-
-<h2 align="center">💻 Language Statistics</h2>
+<img src="./assets/github-stats.svg" width="49%" alt="Nawrin's GitHub Statistics"/>
+<img src="./assets/top-langs.svg" width="49%" alt="Most Used Programming Languages"/> 
+<h3 align="center">💻 Top Languages by Repository</h3>
 
 <p align="center">
-  <img src="./assets/top-langs.svg" width="49%" alt="Top Languages by Repository"/>
-  <img src="./assets/top-langs-commits.svg" width="49%" alt="Top Languages by Commit Changes"/>
+  <img src="assets/top-langs.svg" width="49%" />
 </p>
+
+<h3 align="center">🔥 Top Languages by Commits (All Time)</h3>
+
+<p align="center">
+  <img src="assets/top-langs-commits.svg" width="49%" />
+</p>
+
+</div>
 
 🔥 GitHub Streak
 
