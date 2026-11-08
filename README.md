@@ -192,7 +192,7 @@ Focus: E-Commerce • Price Comparison • Product Categories • API Integratio
 🏆 GitHub Trophies
 
 
-<h2 align="center">🏆 GitHub Trophies</h2>
+
 
 <p align="center">
   <img
