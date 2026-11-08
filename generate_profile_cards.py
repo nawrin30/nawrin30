@@ -80,6 +80,104 @@ def fetch_profile():
     return user
 
 def fetch_languages():
+    
+def fetch_commit_languages():
+    """Calculate language usage from all public repositories' commit history."""
+    totals = Counter()
+    page = 1
+
+    extension_map = {
+        ".py": "Python",
+        ".js": "JavaScript",
+        ".jsx": "JavaScript",
+        ".ts": "TypeScript",
+        ".tsx": "TypeScript",
+        ".html": "HTML",
+        ".htm": "HTML",
+        ".css": "CSS",
+        ".scss": "SCSS",
+        ".java": "Java",
+        ".cpp": "C++",
+        ".cc": "C++",
+        ".c": "C",
+        ".h": "C",
+        ".hpp": "C++",
+        ".cs": "C#",
+        ".php": "PHP",
+        ".go": "Go",
+        ".rs": "Rust",
+        ".rb": "Ruby",
+        ".swift": "Swift",
+        ".kt": "Kotlin",
+        ".dart": "Dart",
+        ".sql": "SQL",
+        ".sh": "Shell",
+        ".bat": "Batchfile",
+        ".json": "JSON",
+        ".xml": "XML",
+        ".yml": "YAML",
+        ".yaml": "YAML",
+        ".md": "Markdown",
+        ".vue": "Vue",
+        ".ipynb": "Jupyter Notebook",
+    }
+
+    repos = []
+    page = 1
+
+    while True:
+        batch = request_json(
+            f"https://api.github.com/users/{USERNAME}/repos"
+            f"?per_page=100&page={page}&type=owner"
+        )
+
+        if not batch:
+            break
+
+        repos.extend(
+            repo for repo in batch
+            if not repo.get("private", True)
+        )
+        page += 1
+
+    for repo in repos:
+        print(f"Analyzing commits: {repo['name']}")
+
+        page = 1
+
+        while True:
+            commits = request_json(
+                f"https://api.github.com/repos/{USERNAME}/"
+                f"{repo['name']}/commits?per_page=100&page={page}"
+            )
+
+            if not commits:
+                break
+
+            for commit in commits:
+                details = request_json(
+                    f"https://api.github.com/repos/{USERNAME}/"
+                    f"{repo['name']}/commits/{commit['sha']}"
+                )
+
+                for file in details.get("files", []):
+                    filename = file.get("filename", "")
+                    extension = os.path.splitext(filename)[1].lower()
+
+                    language = extension_map.get(extension)
+
+                    if language:
+                        totals[language] += (
+                            file.get("additions", 0)
+                            + file.get("deletions", 0)
+                        )
+
+            page += 1
+
+    return totals
+
+
+
     repos = request_json(
         f"https://api.github.com/users/{USERNAME}/repos?per_page=100&sort=updated&type=owner"
     )
@@ -135,6 +233,7 @@ def main():
     calendar = collection["contributionCalendar"]
     days = [day for week in calendar["weeks"] for day in week["contributionDays"]]
     languages = fetch_languages()
+commit_languages = fetch_commit_languages()
     public_repos = user["repositories"]["totalCount"]
     stars = sum(repo["stargazerCount"] for repo in user["repositories"]["nodes"])
     total = calendar["totalContributions"]
@@ -288,6 +387,65 @@ def main():
         )
 
     write_svg("top-langs.svg", p)
+    
+    # Top Languages by All-Time Commits
+    p = svg_card("Top Languages by Commits", height=230)
+
+    top = commit_languages.most_common(6)
+    total_bytes = sum(commit_languages.values()) or 1
+
+    colors = [
+        "#ff3e8a", "#7dcfff", "#ffd43b",
+        "#bb9af7", "#9ece6a", "#f7768e"
+    ]
+
+    x, y, bar_w = 25, 65, 445
+    used = 0
+
+    for idx, (lang, amount) in enumerate(top):
+        pct = amount / total_bytes * 100
+        w = bar_w * amount / total_bytes
+
+        p.append(
+            f'<rect x="{x+used:.2f}" y="{y}" '
+            f'width="{max(w, 0):.2f}" height="12" '
+            f'rx="4" fill="{colors[idx]}"/>'
+        )
+        used += w
+
+    for idx, (lang, amount) in enumerate(top):
+        col = idx % 2
+        row = idx // 2
+
+        lx = 25 + col * 235
+        ly = 105 + row * 30
+        pct = amount / total_bytes * 100
+
+        p.append(
+            f'<circle cx="{lx+4}" cy="{ly-4}" '
+            f'r="4" fill="{colors[idx]}"/>'
+        )
+
+        p.append(
+            f'<text x="{lx+16}" y="{ly}" fill="{TEXT}" '
+            f'font-family="Segoe UI,Arial,sans-serif" '
+            f'font-size="12">{escape(lang)}</text>'
+        )
+
+        p.append(
+            f'<text x="{lx+210}" y="{ly}" '
+            f'text-anchor="end" fill="{colors[idx]}" '
+            f'font-size="12">{pct:.1f}%</text>'
+        )
+
+    if not top:
+        p.append(
+            f'<text x="25" y="100" fill="{MUTED}" '
+            f'font-size="13">No commit language data available.</text>'
+        )
+
+    write_svg("top-langs-commits.svg", p)
+
 
     # Contribution streak card: calculated from GitHub's contribution calendar.
     
