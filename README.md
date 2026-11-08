@@ -69,42 +69,38 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 
 🚀 Featured Projects
 
-
 <h2 align="center">🚀 Featured Projects</h2>
 <p align="center">
-  A showcase of my projects, creativity, and development journey.
+  A showcase of my projects and development journey.
 </p>
 
 <table>
 <tr>
 <td width="33%" valign="top">
 
-<h3>📋 TaskFlow</h3>
+<h4>📋 TaskFlow</h4>
 <p><b>Smart Task & Project Management System</b></p>
-<p>A modern platform to organize projects, manage tasks, track progress, and improve productivity.</p>
-<p><b>Focus:</b> Project Management • Task Tracking • Productivity • Team Collaboration</p>
-<p><b>Tech Stack:</b></p>
-<img src="https://skillicons.dev/icons?i=html,css,js" height="35"/>
+<p><sub>A platform to organize projects, manage tasks, track progress, and improve productivity.</sub></p>
+<p><sub><b>Tech Stack:</b></sub></p>
+<img src="https://skillicons.dev/icons?i=html,css,js" height="30"/>
 
 </td>
 <td width="33%" valign="top">
 
-<h3>🌦️ SkyCast</h3>
+<h4>🌦️ SkyCast</h4>
 <p><b>Weather Forecasting App</b></p>
-<p>A responsive weather application providing weather updates, temperature details, and essential weather information.</p>
-<p><b>Focus:</b> Weather Forecasting • API Integration • Responsive Design • Web Development</p>
-<p><b>Tech Stack:</b></p>
-<img src="https://skillicons.dev/icons?i=html,css,js" height="35"/>
+<p><sub>A responsive weather app providing real-time updates, temperature details, and weather information.</sub></p>
+<p><sub><b>Tech Stack:</b></sub></p>
+<img src="https://skillicons.dev/icons?i=html,css,js" height="30"/>
 
 </td>
 <td width="33%" valign="top">
 
-<h3>🤖 SkillForge AI</h3>
+<h4>🤖 SkillForge AI</h4>
 <p><b>AI-Powered Learning Platform</b></p>
-<p>An AI-powered learning platform designed to personalize learning experiences and help learners develop new skills.</p>
-<p><b>Focus:</b> AI • EdTech • Personalized Learning • Web Development</p>
-<p><b>Tech Stack:</b></p>
-<img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind" height="35"/>
+<p><sub>An intelligent learning platform designed to personalize learning experiences and develop new skills.</sub></p>
+<p><sub><b>Tech Stack:</b></sub></p>
+<img src="https://skillicons.dev/icons?i=html,css,js,react,tailwind" height="30"/>
 
 </td>
 </tr>
@@ -112,32 +108,29 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 <tr>
 <td width="33%" valign="top">
 
-<h3>🧘 Mindful Breathing Hub</h3>
+<h4>🧘 Mindful Breathing Hub</h4>
 <p><b>Wellness & Meditation Platform</b></p>
-<p>A calming wellness application featuring guided breathing exercises, meditation sessions, and ambient sounds.</p>
-<p><b>Focus:</b> Mindfulness • Meditation • Breathing Exercises • User Experience</p>
-<p><b>Tech Stack:</b></p>
-<img src="https://skillicons.dev/icons?i=html,css,js,nodejs" height="35"/>
+<p><sub>A wellness app featuring guided breathing, meditation sessions, and ambient sounds for relaxation.</sub></p>
+<p><sub><b>Tech Stack:</b></sub></p>
+<img src="https://skillicons.dev/icons?i=html,css,js,nodejs" height="30"/>
 
 </td>
 <td width="33%" valign="top">
 
-<h3>📖 Quran Al-Kareem</h3>
+<h4>📖 Quran Al-Kareem</h4>
 <p><b>Islamic Companion Website</b></p>
-<p>An Islamic web application to read the Holy Quran, explore Surahs, learn Duas and Dhikr, and access Islamic resources.</p>
-<p><b>Focus:</b> Islamic Learning • Quran • Daily Dhikr • Responsive Web Design</p>
-<p><b>Tech Stack:</b></p>
-<img src="https://skillicons.dev/icons?i=html,css,js" height="35"/>
+<p><sub>An Islamic platform to read the Holy Quran, explore Surahs, learn Duas and Dhikr.</sub></p>
+<p><sub><b>Tech Stack:</b></sub></p>
+<img src="https://skillicons.dev/icons?i=html,css,js" height="30"/>
 
 </td>
 <td width="33%" valign="top">
 
-<h3>🛒 Bazar Dor</h3>
+<h4>🛒 Bazar Dor</h4>
 <p><b>Daily Essentials Price Comparison Platform</b></p>
-<p>A web application that helps users explore daily essentials, browse product categories, and compare prices for smarter shopping.</p>
-<p><b>Focus:</b> E-Commerce • Price Comparison • Product Categories • API Integration</p>
-<p><b>Tech Stack:</b></p>
-<img src="https://skillicons.dev/icons?i=nextjs,react,js,tailwind,git,github" height="35"/>
+<p><sub>A platform to browse daily essentials, explore product categories, and compare prices.</sub></p>
+<p><sub><b>Tech Stack:</b></sub></p>
+<img src="https://skillicons.dev/icons?i=nextjs,react,js,tailwind,git,github" height="30"/>
 
 </td>
 </tr>
