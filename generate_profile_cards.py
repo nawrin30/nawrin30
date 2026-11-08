@@ -1,6 +1,6 @@
 
 #!/usr/bin/env python3
-"""Generate animated GitHub profile statistics cards."""
+"""Generate self-hosted GitHub profile cards using GitHub's API."""
 
 import json
 import os
@@ -87,18 +87,25 @@ def request_json(url, data=None):
 
     try:
         with urllib.request.urlopen(req, timeout=30) as response:
-            return json.loads(response.read().decode("utf-8"))
+            return json.loads(
+                response.read().decode("utf-8")
+            )
 
     except urllib.error.HTTPError as exc:
 
-        detail = exc.read().decode("utf-8", errors="replace")
+        detail = exc.read().decode(
+            "utf-8",
+            errors="replace"
+        )
 
         raise RuntimeError(
             f"GitHub API returned HTTP {exc.code}: {detail}"
         ) from exc
 
     except urllib.error.URLError as exc:
-        raise RuntimeError(f"Network error: {exc}") from exc
+        raise RuntimeError(
+            f"Network error: {exc}"
+        ) from exc
 
 
 # -------------------- FETCH PROFILE --------------------
@@ -119,7 +126,9 @@ def fetch_profile():
     )
 
     if result.get("errors"):
-        raise RuntimeError(json.dumps(result["errors"]))
+        raise RuntimeError(
+            json.dumps(result["errors"])
+        )
 
     user = result.get("data", {}).get("user")
 
@@ -158,7 +167,7 @@ def fetch_repositories():
     return repos
 
 
-# -------------------- TOP LANGUAGES BY REPOSITORY --------------------
+# -------------------- TOP LANGUAGES --------------------
 
 def fetch_languages(repos=None):
     """Calculate language usage from all public repositories."""
@@ -171,7 +180,10 @@ def fetch_languages(repos=None):
     for repo in repos:
 
         try:
-            langs = request_json(repo["languages_url"])
+            langs = request_json(
+                repo["languages_url"]
+            )
+
             totals.update(langs)
 
         except Exception as exc:
@@ -185,12 +197,7 @@ def fetch_languages(repos=None):
 # -------------------- ALL-TIME COMMIT LANGUAGES --------------------
 
 def fetch_commit_languages(repos=None):
-    """
-    Calculate language usage from all public commit file changes.
-
-    This measures changed lines (additions + deletions),
-    not the number of commits.
-    """
+    """Calculate language usage from public commit file changes."""
 
     if repos is None:
         repos = fetch_repositories()
@@ -237,7 +244,9 @@ def fetch_commit_languages(repos=None):
 
         repo_name = repo["name"]
 
-        print(f"Analyzing commits: {repo_name}")
+        print(
+            f"Analyzing commits: {repo_name}"
+        )
 
         page = 1
 
@@ -268,9 +277,12 @@ def fetch_commit_languages(repos=None):
                             filename
                         )[1].lower()
 
-                        language = extension_map.get(extension)
+                        language = extension_map.get(
+                            extension
+                        )
 
                         if language:
+
                             totals[language] += (
                                 file.get("additions", 0)
                                 + file.get("deletions", 0)
@@ -347,241 +359,6 @@ def write_svg(name, parts):
         file.write("\n".join(parts))
 
 
-# -------------------- ANIMATED CIRCULAR LANGUAGE CARD --------------------
-
-def circular_language_card(
-    title,
-    language_data,
-    filename,
-    center_label,
-    center_value,
-    width=495,
-    height=270
-):
-    """Generate an animated neon circular language statistics card."""
-
-    colors = [
-        "#38bdf8",
-        "#a855f7",
-        "#f59e0b",
-        "#22c55e",
-        "#ec4899",
-        "#818cf8",
-    ]
-
-    total = sum(language_data.values())
-
-    p = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" '
-        f'width="{width}" height="{height}" '
-        f'viewBox="0 0 {width} {height}">',
-
-        """
-        <defs>
-
-          <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#a855f7"/>
-            <stop offset="50%" stop-color="#3b82f6"/>
-            <stop offset="100%" stop-color="#22c55e"/>
-          </linearGradient>
-
-          <radialGradient id="background">
-            <stop offset="0%" stop-color="#10172e"/>
-            <stop offset="100%" stop-color="#080d20"/>
-          </radialGradient>
-
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-
-          <style>
-
-            @keyframes pulse {
-              0%, 100% { opacity: .35; }
-              50% { opacity: .9; }
-            }
-
-            @keyframes appear {
-              from {
-                opacity: 0;
-                stroke-dashoffset: 500;
-              }
-              to {
-                opacity: 1;
-              }
-            }
-
-            .card {
-              transition: filter .3s ease;
-            }
-
-            .card:hover {
-              filter: brightness(1.2);
-            }
-
-            .donut-segment {
-              animation: appear 1.8s ease both;
-              filter: url(#glow);
-              transition: opacity .3s ease;
-            }
-
-            .donut-segment:hover {
-              opacity: .7;
-            }
-
-            .outer-glow {
-              animation: pulse 3s ease-in-out infinite;
-            }
-
-            .legend {
-              font-family: Segoe UI, Arial, sans-serif;
-            }
-
-          </style>
-
-        </defs>
-        """,
-
-        f'<rect class="card" x="1" y="1" '
-        f'width="{width-2}" height="{height-2}" '
-        f'rx="22" fill="url(#background)" '
-        f'stroke="url(#border)" stroke-width="1.5"/>',
-
-        f'<text x="25" y="36" fill="#e0e7ff" '
-        f'font-family="Segoe UI,Arial" '
-        f'font-size="18" font-weight="700">'
-        f'{escape(title)}</text>',
-
-        '<line x1="25" y1="52" x2="470" y2="52" '
-        'stroke="#293657" stroke-width="1"/>',
-    ]
-
-    if not total:
-
-        p.append(
-            '<text x="247" y="145" text-anchor="middle" '
-            'fill="#a9b1d6" font-size="14">'
-            'No language data available.</text>'
-        )
-
-        write_svg(filename, p)
-        return
-
-    # Top five languages and remaining languages.
-    top = language_data.most_common(5)
-
-    others = total - sum(
-        amount for _, amount in top
-    )
-
-    if others > 0:
-        top.append(("Others", others))
-
-    chart_total = sum(
-        amount for _, amount in top
-    )
-
-    # Donut chart settings.
-    cx, cy = 125, 158
-    radius = 73
-
-    circumference = 2 * 3.141592653589793 * radius
-
-    # Outer animated glow.
-    p.append(
-        f'<circle class="outer-glow" cx="{cx}" cy="{cy}" '
-        f'r="{radius+13}" fill="none" '
-        f'stroke="#7c3aed" stroke-width="2"/>'
-    )
-
-    # Donut background.
-    p.append(
-        f'<circle cx="{cx}" cy="{cy}" r="{radius}" '
-        f'fill="none" stroke="#29334f" stroke-width="17"/>'
-    )
-
-    # Donut segments.
-    gap = 3
-    available = circumference - gap * len(top)
-    offset = 0
-
-    for idx, (lang, amount) in enumerate(top):
-
-        segment = available * amount / chart_total
-
-        color = colors[idx % len(colors)]
-
-        p.append(
-            f'<circle class="donut-segment" '
-            f'cx="{cx}" cy="{cy}" r="{radius}" '
-            f'fill="none" stroke="{color}" '
-            f'stroke-width="17" '
-            f'stroke-dasharray="{segment:.2f} '
-            f'{circumference-segment:.2f}" '
-            f'stroke-dashoffset="{-offset:.2f}" '
-            f'transform="rotate(-90 {cx} {cy})" '
-            f'stroke-linecap="round" '
-            f'style="animation-delay:{idx * 0.15}s"/>'
-        )
-
-        offset += segment + gap
-
-    # Center value.
-    center_display = f"{center_value:,}"
-
-    p.append(
-        f'<text x="{cx}" y="{cy-4}" '
-        f'text-anchor="middle" fill="#ffffff" '
-        f'font-family="Segoe UI,Arial" '
-        f'font-size="22" font-weight="700">'
-        f'{escape(center_display)}</text>'
-    )
-
-    p.append(
-        f'<text x="{cx}" y="{cy+17}" '
-        f'text-anchor="middle" fill="#a5b4fc" '
-        f'font-family="Segoe UI,Arial" '
-        f'font-size="11">{escape(center_label)}</text>'
-    )
-
-    # Language legend.
-    legend_x = 235
-    legend_y = 91
-    row_gap = 30
-
-    for idx, (lang, amount) in enumerate(top):
-
-        y = legend_y + idx * row_gap
-
-        pct = amount / chart_total * 100
-
-        color = colors[idx % len(colors)]
-
-        p.append(
-            f'<circle cx="{legend_x}" cy="{y-4}" '
-            f'r="5" fill="{color}"/>'
-        )
-
-        p.append(
-            f'<text class="legend" x="{legend_x+15}" '
-            f'y="{y}" fill="#e0e7ff" '
-            f'font-size="13">{escape(lang)}</text>'
-        )
-
-        p.append(
-            f'<text class="legend" x="465" y="{y}" '
-            f'text-anchor="end" fill="{color}" '
-            f'font-size="13" font-weight="700">'
-            f'{pct:.1f}%</text>'
-        )
-
-    write_svg(filename, p)
-
-
 # -------------------- STREAK CALCULATION --------------------
 
 def streak_values(days):
@@ -606,6 +383,7 @@ def streak_values(days):
 
         if counts[index] > 0:
             current += 1
+
         else:
             break
 
@@ -648,11 +426,20 @@ def main():
     public_repos = len(repos)
 
     stars = sum(
-        repo.get("stargazers_count", 0)
-        for repo in repos
+        repo["stargazerCount"]
+        for repo in user["repositories"]["nodes"]
     )
 
+    # Fetch stars from every public repository,
+    # including repositories beyond the first 100.
+    if public_repos > 100:
+        stars = sum(
+            repo.get("stargazers_count", 0)
+            for repo in repos
+        )
+
     total = calendar["totalContributions"]
+
 
     # -------------------- MAIN STATISTICS CARD --------------------
 
@@ -715,23 +502,197 @@ def main():
 
     write_svg("github-stats.svg", p)
 
-    # -------------------- CIRCULAR LANGUAGE CARDS --------------------
 
-    circular_language_card(
-        title="Top Language by Repository",
-        language_data=languages,
-        filename="top-langs.svg",
-        center_label="Repositories",
-        center_value=public_repos
+    # -------------------- TOP LANGUAGES CARD --------------------
+
+    p = svg_card(
+        "Most Used Languages",
+        width=495,
+        height=210
     )
 
-    circular_language_card(
-        title="Top Language by Commit",
-        language_data=commit_languages,
-        filename="top-langs-commits.svg",
-        center_label="Changed Lines",
-        center_value=sum(commit_languages.values())
+    top = languages.most_common(5)
+
+    total_bytes = sum(
+        languages.values()
+    ) or 1
+
+    colors = [
+        "#ff3e8a",
+        "#7dcfff",
+        "#ffd43b",
+        "#bb9af7",
+        "#9ece6a"
+    ]
+
+    bar_x = 25
+    bar_y = 57
+    bar_w = 445
+    bar_h = 12
+
+    if top:
+
+        p.append(
+            f'<rect x="{bar_x}" y="{bar_y}" '
+            f'width="{bar_w}" height="{bar_h}" '
+            f'rx="6" fill="#343044"/>'
+        )
+
+        used = 0.0
+
+        for idx, (lang, amount) in enumerate(top):
+
+            segment_w = (
+                bar_w * amount / total_bytes
+            )
+
+            if segment_w > 0:
+
+                p.append(
+                    f'<rect x="{bar_x+used:.2f}" '
+                    f'y="{bar_y}" width="{segment_w:.2f}" '
+                    f'height="{bar_h}" fill="{colors[idx]}"/>'
+                )
+
+                used += segment_w
+
+        p.append(
+            f'<rect x="{bar_x}" y="{bar_y}" '
+            f'width="{bar_w}" height="{bar_h}" '
+            f'rx="6" fill="none" stroke="#343044"/>'
+        )
+
+        for idx, (lang, amount) in enumerate(top):
+
+            y = 91 + idx * 23
+
+            pct = (
+                amount / total_bytes * 100
+            )
+
+            p.append(
+                f'<circle cx="30" cy="{y-4}" r="4" '
+                f'fill="{colors[idx]}"/>'
+            )
+
+            p.append(
+                f'<text x="43" y="{y}" fill="{TEXT}" '
+                f'font-family="Segoe UI,Arial,sans-serif" '
+                f'font-size="12" font-weight="600">'
+                f'{escape(lang)}</text>'
+            )
+
+            p.append(
+                f'<rect x="175" y="{y-9}" width="220" '
+                f'height="6" rx="3" fill="#343044"/>'
+            )
+
+            p.append(
+                f'<rect x="175" y="{y-9}" '
+                f'width="{220*pct/100:.2f}" '
+                f'height="6" rx="3" fill="{colors[idx]}"/>'
+            )
+
+            p.append(
+                f'<text x="465" y="{y}" text-anchor="end" '
+                f'fill="{colors[idx]}" '
+                f'font-family="Segoe UI,Arial,sans-serif" '
+                f'font-size="11" font-weight="700">'
+                f'{pct:.1f}%</text>'
+            )
+
+    else:
+
+        p.append(
+            f'<text x="25" y="100" fill="{MUTED}" '
+            f'font-family="Segoe UI,Arial,sans-serif" '
+            f'font-size="13">'
+            'No language data available yet.</text>'
+        )
+
+    write_svg("top-langs.svg", p)
+
+
+    # -------------------- TOP LANGUAGES BY COMMITS --------------------
+
+    p = svg_card(
+        "Top Languages by Commits",
+        height=230
     )
+
+    top = commit_languages.most_common(6)
+
+    total_bytes = sum(
+        commit_languages.values()
+    ) or 1
+
+    colors = [
+        "#ff3e8a",
+        "#7dcfff",
+        "#ffd43b",
+        "#bb9af7",
+        "#9ece6a",
+        "#f7768e"
+    ]
+
+    x, y, bar_w = 25, 65, 445
+
+    used = 0
+
+    for idx, (lang, amount) in enumerate(top):
+
+        pct = amount / total_bytes * 100
+
+        w = bar_w * amount / total_bytes
+
+        p.append(
+            f'<rect x="{x+used:.2f}" y="{y}" '
+            f'width="{max(w, 0):.2f}" height="12" '
+            f'rx="4" fill="{colors[idx]}"/>'
+        )
+
+        used += w
+
+    for idx, (lang, amount) in enumerate(top):
+
+        col = idx % 2
+        row = idx // 2
+
+        lx = 25 + col * 235
+        ly = 105 + row * 30
+
+        pct = amount / total_bytes * 100
+
+        p.append(
+            f'<circle cx="{lx+4}" cy="{ly-4}" '
+            f'r="4" fill="{colors[idx]}"/>'
+        )
+
+        p.append(
+            f'<text x="{lx+16}" y="{ly}" fill="{TEXT}" '
+            f'font-family="Segoe UI,Arial,sans-serif" '
+            f'font-size="12">{escape(lang)}</text>'
+        )
+
+        p.append(
+            f'<text x="{lx+210}" y="{ly}" '
+            f'text-anchor="end" fill="{colors[idx]}" '
+            f'font-size="12">{pct:.1f}%</text>'
+        )
+
+    if not top:
+
+        p.append(
+            f'<text x="25" y="100" fill="{MUTED}" '
+            f'font-size="13">'
+            'No commit language data available.</text>'
+        )
+
+    write_svg(
+        "top-langs-commits.svg",
+        p
+    )
+
 
     # -------------------- CONTRIBUTION STREAK CARD --------------------
 
@@ -781,7 +742,9 @@ def main():
 
     circumference = 2 * 3.14159 * radius
 
-    progress = current / max(longest, current, 1)
+    progress = (
+        current / max(longest, current, 1)
+    )
 
     offset = circumference * (1 - progress)
 
@@ -838,13 +801,20 @@ def main():
         'font-size="12">Best consecutive days</text>'
     )
 
-    write_svg("github-streak.svg", p)
+    write_svg(
+        "github-streak.svg",
+        p
+    )
+
 
     # -------------------- CONTRIBUTION GRAPH --------------------
 
     display_name = user.get("name") or user["login"]
 
-    location = user.get("location") or "Location not set"
+    location = (
+        user.get("location")
+        or "Location not set"
+    )
 
     joined = date.fromisoformat(
         user["createdAt"][:10]
@@ -868,7 +838,9 @@ def main():
 
     max_count = max(max_count, 1)
 
-    axis_max = ((max_count + 4) // 5) * 5
+    axis_max = (
+        (max_count + 4) // 5
+    ) * 5
 
     axis_max = max(axis_max, 5)
 
@@ -912,13 +884,23 @@ def main():
         'contributions in the last year</text>',
     ]
 
-    # Y-axis and grid.
+    # Y-axis and grid
 
-    step = max(1, axis_max // 4)
+    step = max(
+        1,
+        axis_max // 4
+    )
 
-    for value in range(0, axis_max + 1, step):
+    for value in range(
+        0,
+        axis_max + 1,
+        step
+    ):
 
-        y = baseline - (value / axis_max) * plot_h
+        y = (
+            baseline
+            - (value / axis_max) * plot_h
+        )
 
         p.append(
             f'<line x1="{left}" y1="{y:.1f}" '
@@ -932,7 +914,7 @@ def main():
             f'font-size="12">{value}</text>'
         )
 
-    # Contribution graph points.
+    # Contribution graph points
 
     points = []
 
@@ -940,17 +922,21 @@ def main():
 
         x = (
             left
-            + (i / max(1, len(chart_days) - 1)) * plot_w
+            + (i / max(1, len(chart_days) - 1))
+            * plot_w
         )
 
         y = (
             baseline
-            - (day["contributionCount"] / axis_max) * plot_h
+            - (
+                day["contributionCount"]
+                / axis_max
+            ) * plot_h
         )
 
         points.append((x, y))
 
-    # Filled area graph.
+    # Filled area graph
 
     if points:
 
@@ -968,7 +954,7 @@ def main():
             'stroke="none" opacity="0.95"/>'
         )
 
-    # X-axis date labels.
+    # X-axis date labels
 
     if chart_days:
 
@@ -981,7 +967,8 @@ def main():
             x = (
                 left
                 + (
-                    index / max(1, len(chart_days) - 1)
+                    index
+                    / max(1, len(chart_days) - 1)
                 ) * plot_w
             )
 
@@ -997,28 +984,30 @@ def main():
                 f'{month}</text>'
             )
 
-    write_svg("contributions.svg", p)
+    write_svg(
+        "contributions.svg",
+        p
+    )
 
-    # -------------------- FINISHED --------------------
+    print(
+        f"\nGenerated profile cards for @{USERNAME}."
+    )
 
-    print(f"\nGenerated profile cards for @{USERNAME}.")
+    print(
+        f"Public repositories: {public_repos}"
+    )
 
-    print(f"Public repositories: {public_repos}")
-    print(f"Total stars: {stars}")
-    print(f"Current streak: {current} days")
-    print(f"Longest streak: {longest} days")
+    print(
+        f"Total stars: {stars}"
+    )
 
-    print("\nTop repository languages:")
+    print(
+        f"Current streak: {current} days"
+    )
 
-    for lang, amount in languages.most_common(5):
-        print(f"{lang}: {amount:,}")
-
-    print("\nTop commit-change languages:")
-
-    for lang, amount in commit_languages.most_common(5):
-        print(f"{lang}: {amount:,}")
-
-    print("\nAll SVG cards generated successfully!")
+    print(
+        f"Longest streak: {longest} days"
+    )
 
 
 # -------------------- RUN SCRIPT --------------------
