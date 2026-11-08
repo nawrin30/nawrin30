@@ -191,8 +191,15 @@ Focus: E-Commerce • Price Comparison • Product Categories • API Integratio
 
 🏆 GitHub Trophies
 
+
+<h2 align="center">🏆 GitHub Trophies</h2>
+
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=nawrin30&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8" alt="Nawrin's GitHub Trophies"/>
+  <img
+    src="https://github-profile-trophy-liard-delta.vercel.app/?username=nawrin30&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=7"
+    alt="Nawrin's GitHub Trophies"
+    width="100%"
+  />
 </p>
 
 
