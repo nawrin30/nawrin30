@@ -67,7 +67,6 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
   <img src="https://skillicons.dev/icons?i=git,github,vscode,idea,ubuntu" alt="Git GitHub VS Code IntelliJ IDEA Ubuntu"/>
 </p>
 
-🚀 Featured Projects
 
 <h2 align="center">🚀 Featured Projects</h2>
 <p align="center">
