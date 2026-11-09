@@ -165,9 +165,9 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 
 <h3 align="center">🔥 Top Languages by Commits (All Time)</h3>
 
-<p align="center">
+
   <img src="assets/top-langs-commits.svg" width="49%" />
-</p>
+
 
 </div>
 
