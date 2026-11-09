@@ -157,19 +157,17 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 <div align="center">
 
 <img src="./assets/github-stats.svg" width="49%" alt="Nawrin's GitHub Statistics"/>
+<img src="./assets/top-langs.svg" width="49%" alt="Most Used Programming Languages"/> 
+
+
 
 <p align="center">
-<img src="./assets/top-langs.svg" width="49%" alt="Most Used Programming Languages"/> 
-</p>
-
-
-
 <h3 align="center">🔥 Top Languages by Commits (All Time)</h3>
 
 
   <img src="assets/top-langs-commits.svg" width="49%" />
 
-
+</p>
 </div>
 
 🔥 GitHub Streak
