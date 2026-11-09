@@ -162,12 +162,9 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 
 <table>
   <tr>
-    <td width="50%">
-      <img src="assets/github-stats.svg" width="100%" />
-    </td>
-    <td width="50%">
+   
       <img src="assets/commits-by-hours.svg" width="100%" />
-    </td>
+    
   </tr>
 </table>
 
