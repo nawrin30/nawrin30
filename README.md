@@ -155,20 +155,20 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 📊 GitHub Statistics
 
 <div align="center">
+  <img src="./assets/github-stats.svg" width="49%" alt="Nawrin's GitHub Statistics"/>
+  <img src="./assets/commits-by-hours.svg" width="49%" alt="Commits by Hour"/>
+</div>
 
-<img src="./assets/github-stats.svg" width="49%" alt="Nawrin's GitHub Statistics"/>
-<img src="./assets/commits-by-hours.svg" alt="Commits by Hour">
-
-<p align="center">
 <h3 align="center">🔥 Top Languages by Commits (All Time)</h3>
 
-
-  <img src="assets/top-langs-commits.svg" width="49%" />
+<div align="center">
+  <img src="./assets/top-langs-commits.svg" width="49%" />
+</div>
 
 <h3 align="center">🔥 Most Used Programming Language</h3>
-  <img src="./assets/top-langs.svg" width="49%" alt="Most Used Programming Languages"/> 
 
-</p>
+<div align="center">
+  <img src="./assets/top-langs.svg" width="49%" alt="Most Used Programming Languages"/>
 </div>
 
 🔥 GitHub Streak
