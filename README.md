@@ -167,6 +167,8 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 
   <img src="assets/top-langs-commits.svg" width="49%" />
 
+  <img src="./assets/top-langs.svg" width="49%" alt="Most Used Programming Languages"/> 
+
 </p>
 </div>
 
