@@ -157,16 +157,7 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 <div align="center">
 
 <img src="./assets/github-stats.svg" width="49%" alt="Nawrin's GitHub Statistics"/>
-<table>
-  <tr>
-    <td width="50%">
-      <img src="assets/github-stats.svg" width="100%" />
-    </td>
-    <td width="50%">
-      <img src="assets/commits-by-hours.svg" width="100%" />
-    </td>
-  </tr>
-</table>
+
 <p align="center">
 <img src="./assets/top-langs.svg" width="49%" alt="Most Used Programming Languages"/> 
 </p>
