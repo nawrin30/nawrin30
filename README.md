@@ -156,7 +156,7 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 
 <div align="center">
   <img src="./assets/github-stats.svg" width="49%" alt="Nawrin's GitHub Statistics"/>
-  <img src="./assets/commits-by-hours.svg" width="49%" alt="Commits by Hour"/>
+  <img src="./assets/commits-by-hours.svg" width="47%" alt="Commits by Hour"/>
 </div>
 
 <h3 align="center">🔥 Top Languages by Commits (All Time)</h3>
