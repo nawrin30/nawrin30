@@ -157,7 +157,9 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 <div align="center">
 
 <img src="./assets/github-stats.svg" width="49%" alt="Nawrin's GitHub Statistics"/>
+<p align="center">
 <img src="./assets/top-langs.svg" width="49%" alt="Most Used Programming Languages"/> 
+</p>
 
 
 
