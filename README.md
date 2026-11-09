@@ -159,18 +159,6 @@ I’m currently working on projects such as TaskFlow, Real-Time Communication Ap
 <img src="./assets/github-stats.svg" width="49%" alt="Nawrin's GitHub Statistics"/>
 
 
-
-<table>
-  <tr>
-   
-      <img src="assets/commits-by-hours.svg" width="100%" />
-    
-  </tr>
-</table>
-
-
-
-
 <p align="center">
 <h3 align="center">🔥 Top Languages by Commits (All Time)</h3>
 
