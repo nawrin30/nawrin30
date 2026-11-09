@@ -6,8 +6,9 @@ import json
 import os
 import urllib.request
 import urllib.error
+
 from collections import Counter
-from datetime import date
+from datetime import date, datetime, timezone, timedelta
 from html import escape
 
 USERNAME = os.getenv("GH_USERNAME", "nawrin30")
@@ -22,6 +23,9 @@ MUTED = "#a9b1d6"
 ACCENT = "#7aa2f7"
 PURPLE = "#bb9af7"
 GREEN = "#9ece6a"
+
+# Bangladesh timezone
+BD_TIMEZONE = timezone(timedelta(hours=6))
 
 QUERY = """
 query($login: String!) {
@@ -301,6 +305,163 @@ def fetch_commit_languages(repos=None):
     return totals
 
 
+# -------------------- COMMITS BY HOURS --------------------
+
+def generate_commit_hours_card(repos):
+    """Generate an hourly commit activity chart in Bangladesh time."""
+
+    hourly_commits = Counter()
+
+    for repo in repos:
+
+        repo_name = repo["name"]
+
+        print(
+            f"Analyzing commit hours: {repo_name}"
+        )
+
+        page = 1
+
+        while True:
+
+            try:
+
+                commits = request_json(
+                    f"https://api.github.com/repos/{USERNAME}/"
+                    f"{repo_name}/commits?per_page=100&page={page}"
+                )
+
+                if not commits:
+                    break
+
+                for commit in commits:
+
+                    commit_data = commit.get("commit", {})
+                    author_data = commit_data.get("author", {})
+
+                    date_str = author_data.get("date")
+
+                    if not date_str:
+                        continue
+
+                    try:
+
+                        commit_datetime = datetime.fromisoformat(
+                            date_str.replace("Z", "+00:00")
+                        )
+
+                        bd_datetime = commit_datetime.astimezone(
+                            BD_TIMEZONE
+                        )
+
+                        hourly_commits[bd_datetime.hour] += 1
+
+                    except (ValueError, TypeError):
+                        continue
+
+                page += 1
+
+            except Exception as exc:
+
+                print(
+                    f"Skipping commit hours for {repo_name}: {exc}"
+                )
+
+                break
+
+    total_commits = sum(hourly_commits.values())
+
+    width = 495
+    height = 230
+
+    p = svg_card(
+        "Commits by Hours",
+        width=width,
+        height=height
+    )
+
+    p.append(
+        f'<text x="24" y="53" fill="{MUTED}" '
+        f'font-family="Segoe UI,Arial,sans-serif" '
+        f'font-size="10">'
+        f'Bangladesh Time (UTC+6) | Total: {total_commits:,}'
+        f'</text>'
+    )
+
+    chart_x = 25
+    chart_y = 77
+    chart_width = 445
+    chart_height = 105
+
+    bar_width = 12
+    gap = 6
+
+    max_count = max(
+        hourly_commits.values(),
+        default=1
+    )
+
+    # Hourly bars
+
+    for hour in range(24):
+
+        count = hourly_commits.get(hour, 0)
+
+        bar_height = (
+            count / max_count
+        ) * chart_height
+
+        x = chart_x + hour * (bar_width + gap)
+
+        y = (
+            chart_y
+            + chart_height
+            - bar_height
+        )
+
+        bar_color = (
+            ACCENT if count > 0
+            else "#414868"
+        )
+
+        p.append(
+            f'<rect x="{x}" y="{y:.2f}" '
+            f'width="{bar_width}" '
+            f'height="{max(bar_height, 2):.2f}" '
+            f'rx="3" fill="{bar_color}"/>'
+        )
+
+        # Show hour labels every 3 hours
+
+        if hour % 3 == 0:
+
+            p.append(
+                f'<text x="{x + bar_width / 2}" '
+                f'y="201" text-anchor="middle" '
+                f'fill="{MUTED}" '
+                f'font-family="Segoe UI,Arial,sans-serif" '
+                f'font-size="9">'
+                f'{hour:02d}</text>'
+            )
+
+    p.append(
+        f'<text x="24" y="220" fill="{MUTED}" '
+        f'font-family="Segoe UI,Arial,sans-serif" '
+        f'font-size="9">'
+        f'Hour of day (00–23)'
+        f'</text>'
+    )
+
+    write_svg(
+        "commits-by-hours.svg",
+        p
+    )
+
+    print(
+        f"Commits by Hours generated. Total: {total_commits:,}"
+    )
+
+
 # -------------------- SVG CARD --------------------
 
 def svg_card(title, width=495, height=190):
@@ -537,9 +698,14 @@ def main():
 
     repos = fetch_repositories()
 
+    print(f"Found {len(repos)} public repositories.")
+
     languages = fetch_languages(repos)
 
     commit_languages = fetch_commit_languages(repos)
+
+    # Generate hourly commit chart
+    generate_commit_hours_card(repos)
 
     public_repos = len(repos)
 
