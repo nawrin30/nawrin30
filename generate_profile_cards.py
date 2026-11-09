@@ -14,6 +14,7 @@ USERNAME = os.getenv("GH_USERNAME", "nawrin30")
 TOKEN = os.getenv("GH_TOKEN")
 OUT = "assets"
 
+# Existing Tokyo Night-inspired colors
 BG = "#1a1b27"
 CARD = "#24283b"
 TEXT = "#c0caf5"
@@ -359,6 +360,123 @@ def write_svg(name, parts):
         file.write("\n".join(parts))
 
 
+# -------------------- CIRCULAR LANGUAGE CARD --------------------
+
+def circular_language_card(title, language_data, filename, max_items=5):
+
+    width, height = 495, 230
+
+    p = svg_card(
+        title,
+        width=width,
+        height=height
+    )
+
+    top = language_data.most_common(max_items)
+
+    total = sum(language_data.values()) or 1
+
+    colors = [
+        "#ff3e8a",
+        "#7dcfff",
+        "#ffd43b",
+        "#bb9af7",
+        "#9ece6a",
+        "#f7768e"
+    ]
+
+    cx, cy = 112, 137
+    radius = 65
+    stroke_width = 17
+
+    circumference = 2 * 3.14159265 * radius
+
+    # Background circle
+
+    p.append(
+        f'<circle cx="{cx}" cy="{cy}" r="{radius}" '
+        f'fill="none" stroke="#343044" '
+        f'stroke-width="{stroke_width}"/>'
+    )
+
+    # Donut chart segments
+
+    offset = 0
+
+    for idx, (lang, amount) in enumerate(top):
+
+        percentage = amount / total
+        segment = circumference * percentage
+
+        p.append(
+            f'<circle cx="{cx}" cy="{cy}" r="{radius}" '
+            f'fill="none" stroke="{colors[idx]}" '
+            f'stroke-width="{stroke_width}" '
+            f'stroke-dasharray="{segment:.2f} '
+            f'{circumference - segment:.2f}" '
+            f'stroke-dashoffset="{-offset:.2f}" '
+            f'transform="rotate(-90 {cx} {cy})"/>'
+        )
+
+        offset += segment
+
+    # Center text
+
+    p.append(
+        f'<text x="{cx}" y="{cy-5}" '
+        f'text-anchor="middle" fill="{TEXT}" '
+        f'font-family="Segoe UI,Arial,sans-serif" '
+        f'font-size="12" font-weight="600">'
+        f'{len(top)} Languages</text>'
+    )
+
+    p.append(
+        f'<text x="{cx}" y="{cy+14}" '
+        f'text-anchor="middle" fill="{ACCENT}" '
+        f'font-family="Segoe UI,Arial,sans-serif" '
+        f'font-size="11">Distribution</text>'
+    )
+
+    # Language names and percentages
+
+    for idx, (lang, amount) in enumerate(top):
+
+        y = 83 + idx * 27
+
+        pct = amount / total * 100
+
+        p.append(
+            f'<circle cx="215" cy="{y-4}" r="4.5" '
+            f'fill="{colors[idx]}"/>'
+        )
+
+        p.append(
+            f'<text x="228" y="{y}" fill="{TEXT}" '
+            f'font-family="Segoe UI,Arial,sans-serif" '
+            f'font-size="12" font-weight="600">'
+            f'{escape(lang)}</text>'
+        )
+
+        p.append(
+            f'<text x="465" y="{y}" '
+            f'text-anchor="end" fill="{colors[idx]}" '
+            f'font-family="Segoe UI,Arial,sans-serif" '
+            f'font-size="12" font-weight="700">'
+            f'{pct:.1f}%</text>'
+        )
+
+    if not top:
+
+        p.append(
+            f'<text x="215" y="120" fill="{MUTED}" '
+            f'font-family="Segoe UI,Arial,sans-serif" '
+            f'font-size="12">'
+            'No language data available.</text>'
+        )
+
+    write_svg(filename, p)
+
+
 # -------------------- STREAK CALCULATION --------------------
 
 def streak_values(days):
@@ -432,7 +550,9 @@ def main():
 
     # Fetch stars from every public repository,
     # including repositories beyond the first 100.
+
     if public_repos > 100:
+
         stars = sum(
             repo.get("stargazers_count", 0)
             for repo in repos
@@ -503,194 +623,23 @@ def main():
     write_svg("github-stats.svg", p)
 
 
-    # -------------------- TOP LANGUAGES CARD --------------------
+    # -------------------- TOP LANGUAGES BY REPOSITORY --------------------
 
-    p = svg_card(
-        "Most Used Languages",
-        width=495,
-        height=210
+    circular_language_card(
+        title="Top Languages by Repository",
+        language_data=languages,
+        filename="top-langs.svg",
+        max_items=5
     )
-
-    top = languages.most_common(5)
-
-    total_bytes = sum(
-        languages.values()
-    ) or 1
-
-    colors = [
-        "#ff3e8a",
-        "#7dcfff",
-        "#ffd43b",
-        "#bb9af7",
-        "#9ece6a"
-    ]
-
-    bar_x = 25
-    bar_y = 57
-    bar_w = 445
-    bar_h = 12
-
-    if top:
-
-        p.append(
-            f'<rect x="{bar_x}" y="{bar_y}" '
-            f'width="{bar_w}" height="{bar_h}" '
-            f'rx="6" fill="#343044"/>'
-        )
-
-        used = 0.0
-
-        for idx, (lang, amount) in enumerate(top):
-
-            segment_w = (
-                bar_w * amount / total_bytes
-            )
-
-            if segment_w > 0:
-
-                p.append(
-                    f'<rect x="{bar_x+used:.2f}" '
-                    f'y="{bar_y}" width="{segment_w:.2f}" '
-                    f'height="{bar_h}" fill="{colors[idx]}"/>'
-                )
-
-                used += segment_w
-
-        p.append(
-            f'<rect x="{bar_x}" y="{bar_y}" '
-            f'width="{bar_w}" height="{bar_h}" '
-            f'rx="6" fill="none" stroke="#343044"/>'
-        )
-
-        for idx, (lang, amount) in enumerate(top):
-
-            y = 91 + idx * 23
-
-            pct = (
-                amount / total_bytes * 100
-            )
-
-            p.append(
-                f'<circle cx="30" cy="{y-4}" r="4" '
-                f'fill="{colors[idx]}"/>'
-            )
-
-            p.append(
-                f'<text x="43" y="{y}" fill="{TEXT}" '
-                f'font-family="Segoe UI,Arial,sans-serif" '
-                f'font-size="12" font-weight="600">'
-                f'{escape(lang)}</text>'
-            )
-
-            p.append(
-                f'<rect x="175" y="{y-9}" width="220" '
-                f'height="6" rx="3" fill="#343044"/>'
-            )
-
-            p.append(
-                f'<rect x="175" y="{y-9}" '
-                f'width="{220*pct/100:.2f}" '
-                f'height="6" rx="3" fill="{colors[idx]}"/>'
-            )
-
-            p.append(
-                f'<text x="465" y="{y}" text-anchor="end" '
-                f'fill="{colors[idx]}" '
-                f'font-family="Segoe UI,Arial,sans-serif" '
-                f'font-size="11" font-weight="700">'
-                f'{pct:.1f}%</text>'
-            )
-
-    else:
-
-        p.append(
-            f'<text x="25" y="100" fill="{MUTED}" '
-            f'font-family="Segoe UI,Arial,sans-serif" '
-            f'font-size="13">'
-            'No language data available yet.</text>'
-        )
-
-    write_svg("top-langs.svg", p)
 
 
     # -------------------- TOP LANGUAGES BY COMMITS --------------------
 
-    p = svg_card(
-        "Top Languages by Commits",
-        height=230
-    )
-
-    top = commit_languages.most_common(6)
-
-    total_bytes = sum(
-        commit_languages.values()
-    ) or 1
-
-    colors = [
-        "#ff3e8a",
-        "#7dcfff",
-        "#ffd43b",
-        "#bb9af7",
-        "#9ece6a",
-        "#f7768e"
-    ]
-
-    x, y, bar_w = 25, 65, 445
-
-    used = 0
-
-    for idx, (lang, amount) in enumerate(top):
-
-        pct = amount / total_bytes * 100
-
-        w = bar_w * amount / total_bytes
-
-        p.append(
-            f'<rect x="{x+used:.2f}" y="{y}" '
-            f'width="{max(w, 0):.2f}" height="12" '
-            f'rx="4" fill="{colors[idx]}"/>'
-        )
-
-        used += w
-
-    for idx, (lang, amount) in enumerate(top):
-
-        col = idx % 2
-        row = idx // 2
-
-        lx = 25 + col * 235
-        ly = 105 + row * 30
-
-        pct = amount / total_bytes * 100
-
-        p.append(
-            f'<circle cx="{lx+4}" cy="{ly-4}" '
-            f'r="4" fill="{colors[idx]}"/>'
-        )
-
-        p.append(
-            f'<text x="{lx+16}" y="{ly}" fill="{TEXT}" '
-            f'font-family="Segoe UI,Arial,sans-serif" '
-            f'font-size="12">{escape(lang)}</text>'
-        )
-
-        p.append(
-            f'<text x="{lx+210}" y="{ly}" '
-            f'text-anchor="end" fill="{colors[idx]}" '
-            f'font-size="12">{pct:.1f}%</text>'
-        )
-
-    if not top:
-
-        p.append(
-            f'<text x="25" y="100" fill="{MUTED}" '
-            f'font-size="13">'
-            'No commit language data available.</text>'
-        )
-
-    write_svg(
-        "top-langs-commits.svg",
-        p
+    circular_language_card(
+        title="Top Languages by Commits",
+        language_data=commit_languages,
+        filename="top-langs-commits.svg",
+        max_items=6
     )
 
 
